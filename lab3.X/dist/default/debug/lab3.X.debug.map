@@ -1,0 +1,38 @@
+MPLINK 5.09, LINKER
+Linker Map File - Created Thu Oct 02 12:35:41 2025
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x00002e
+                   .cinit    romdata   0x00002e    program   0x000002
+.config_300001_BUILD/DEFAULT/DEBUG/HARD.O    romdata   0x300001    program   0x000001
+.config_300003_BUILD/DEFAULT/DEBUG/HARD.O    romdata   0x300003    program   0x000001
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x00002f      
+                            0x300001    0x300001      
+                            0x300003    0x300003      
+            50 out of 33048 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   NO_ADD   0x00001e    program     static C:\Users\bryan\MPLABXProjects\lab3.X\hard.asm
+                     loop   0x000014    program     static C:\Users\bryan\MPLABXProjects\lab3.X\hard.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     loop   0x000014    program     static C:\Users\bryan\MPLABXProjects\lab3.X\hard.asm
+                   NO_ADD   0x00001e    program     static C:\Users\bryan\MPLABXProjects\lab3.X\hard.asm
+
+

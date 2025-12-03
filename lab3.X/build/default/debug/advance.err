@@ -1,0 +1,4 @@
+Warning[205] C:\USERS\BRYAN\MPLABXPROJECTS\LAB3.X\ADVANCE.ASM 1 : Found directive in column 1. (List)
+Warning[207] C:\USERS\BRYAN\MPLABXPROJECTS\LAB3.X\ADVANCE.ASM 26 : Found label after column 1. (BORROW)
+Warning[207] C:\USERS\BRYAN\MPLABXPROJECTS\LAB3.X\ADVANCE.ASM 33 : Found label after column 1. (NO_BORROW)
+Warning[207] C:\USERS\BRYAN\MPLABXPROJECTS\LAB3.X\ADVANCE.ASM 38 : Found label after column 1. (END_BORROW)

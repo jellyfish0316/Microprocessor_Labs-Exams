@@ -1,0 +1,15 @@
+Warning[205] C:\USERS\BRYAN\MPLABXPROJECTS\LAB7.X\BASIC.ASM 62 : Found directive in column 1. (org)
+Warning[205] C:\USERS\BRYAN\MPLABXPROJECTS\LAB7.X\BASIC.ASM 83 : Found directive in column 1. (endm)
+Warning[203] C:\USERS\BRYAN\MPLABXPROJECTS\LAB7.X\BASIC.ASM 88 : Found opcode in column 1. (goto)
+Warning[207] C:\USERS\BRYAN\MPLABXPROJECTS\LAB7.X\BASIC.ASM 69 : Found label after column 1. (LOOP2)
+Warning[202] C:\USERS\BRYAN\MPLABXPROJECTS\LAB7.X\BASIC.ASM 70 : Argument out of range.  Least significant bits used.
+Warning[207] C:\USERS\BRYAN\MPLABXPROJECTS\LAB7.X\BASIC.ASM 72 : Found label after column 1. (LOOP1)
+Warning[207] C:\USERS\BRYAN\MPLABXPROJECTS\LAB7.X\BASIC.ASM 69 : Found label after column 1. (LOOP2)
+Warning[202] C:\USERS\BRYAN\MPLABXPROJECTS\LAB7.X\BASIC.ASM 70 : Argument out of range.  Least significant bits used.
+Warning[207] C:\USERS\BRYAN\MPLABXPROJECTS\LAB7.X\BASIC.ASM 72 : Found label after column 1. (LOOP1)
+Warning[207] C:\USERS\BRYAN\MPLABXPROJECTS\LAB7.X\BASIC.ASM 137 : Found label after column 1. (not_over_15)
+Warning[207] C:\USERS\BRYAN\MPLABXPROJECTS\LAB7.X\BASIC.ASM 69 : Found label after column 1. (LOOP2)
+Warning[202] C:\USERS\BRYAN\MPLABXPROJECTS\LAB7.X\BASIC.ASM 70 : Argument out of range.  Least significant bits used.
+Warning[207] C:\USERS\BRYAN\MPLABXPROJECTS\LAB7.X\BASIC.ASM 72 : Found label after column 1. (LOOP1)
+Warning[207] C:\USERS\BRYAN\MPLABXPROJECTS\LAB7.X\BASIC.ASM 149 : Found label after column 1. (not_under_0)
+Warning[205] C:\USERS\BRYAN\MPLABXPROJECTS\LAB7.X\BASIC.ASM 151 : Found directive in column 1. (end)

@@ -1,0 +1,7 @@
+Warning[205] C:\USERS\BRYAN\MPLABXPROJECTS\MIDTERM.X\2B.ASM 1 : Found directive in column 1. (List)
+Warning[207] C:\USERS\BRYAN\MPLABXPROJECTS\MIDTERM.X\2B.ASM 50 : Found label after column 1. (loop1)
+Warning[207] C:\USERS\BRYAN\MPLABXPROJECTS\MIDTERM.X\2B.ASM 54 : Found label after column 1. (loop2)
+Warning[207] C:\USERS\BRYAN\MPLABXPROJECTS\MIDTERM.X\2B.ASM 59 : Found label after column 1. (IF_BLOCK_3)
+Warning[207] C:\USERS\BRYAN\MPLABXPROJECTS\MIDTERM.X\2B.ASM 65 : Found label after column 1. (ELSE_BLOCK_3)
+Warning[207] C:\USERS\BRYAN\MPLABXPROJECTS\MIDTERM.X\2B.ASM 67 : Found label after column 1. (END_IF_3)
+Warning[207] C:\USERS\BRYAN\MPLABXPROJECTS\MIDTERM.X\2B.ASM 81 : Found label after column 1. (break)

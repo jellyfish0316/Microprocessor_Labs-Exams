@@ -1,0 +1,5 @@
+Warning[205] C:\USERS\BRYAN\MPLABXPROJECTS\MIDTERM.X\3A.ASM 1 : Found directive in column 1. (List)
+Warning[207] C:\USERS\BRYAN\MPLABXPROJECTS\MIDTERM.X\3A.ASM 32 : Found label after column 1. (loopj)
+Warning[207] C:\USERS\BRYAN\MPLABXPROJECTS\MIDTERM.X\3A.ASM 40 : Found label after column 1. (IF_EQ_TARGET)
+Warning[207] C:\USERS\BRYAN\MPLABXPROJECTS\MIDTERM.X\3A.ASM 42 : Found label after column 1. (NOT_EQ_TARGET)
+Warning[203] C:\USERS\BRYAN\MPLABXPROJECTS\MIDTERM.X\3A.ASM 57 : Found opcode in column 1. (GOTO)

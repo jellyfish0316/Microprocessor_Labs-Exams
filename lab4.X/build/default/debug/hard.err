@@ -1,0 +1,8 @@
+Warning[205] C:\USERS\BRYAN\MPLABXPROJECTS\1AB4.X\HARD.ASM 1 : Found directive in column 1. (List)
+Warning[207] C:\USERS\BRYAN\MPLABXPROJECTS\1AB4.X\HARD.ASM 24 : Found label after column 1. (loop1)
+Warning[207] C:\USERS\BRYAN\MPLABXPROJECTS\1AB4.X\HARD.ASM 58 : Found label after column 1. (EQUAL)
+Warning[207] C:\USERS\BRYAN\MPLABXPROJECTS\1AB4.X\HARD.ASM 61 : Found label after column 1. (NOT_EQUAL)
+Warning[207] C:\USERS\BRYAN\MPLABXPROJECTS\1AB4.X\HARD.ASM 67 : Found label after column 1. (break1)
+Warning[207] C:\USERS\BRYAN\MPLABXPROJECTS\1AB4.X\HARD.ASM 77 : Found label after column 1. (loop)
+Warning[207] C:\USERS\BRYAN\MPLABXPROJECTS\1AB4.X\HARD.ASM 94 : Found label after column 1. (break)
+Warning[203] C:\USERS\BRYAN\MPLABXPROJECTS\1AB4.X\HARD.ASM 107 : Found opcode in column 1. (NOP)
