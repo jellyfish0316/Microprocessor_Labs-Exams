@@ -64,6 +64,7 @@
     #define STR_MAX 100
     #define VR_MAX ((1 << 10) - 1)
     // #define delay(t) __delay_ms(t * 1000);
+
     #define MAX30102_WRITE  (0xAE) // 0x57 << 1
     #define MAX30102_READ   (0xAF)
 
@@ -263,13 +264,23 @@ void i2c_write(uint8_t i2c_data){
 }
 
 uint8_t i2c_read(uint8_t ack){
-    uint8_t recieve = 0;
+    uint8_t receive = 0;
     i2c_is_idle();
     SSPCON2bits.RCEN = 1;
-    while(SSPSTATbits.BF != 1);
-    recieve = SSPBUF;
-    SSPCON2bits.ACKEN = ack;
-    return recieve;
+    //while(SSPSTATbits.BF != 1);
+    while (SSPCON2bits.RCEN);
+    receive = SSPBUF;
+
+    if(ack) {
+        SSPCON2bits.ACKDT = 0;  // 準備發送 ACK (繼續讀取)
+    } else {
+        SSPCON2bits.ACKDT = 1;  // 準備發送 NACK (結束讀取)
+    }
+    
+    SSPCON2bits.ACKEN = 1;
+    while(SSPCON2bits.ACKEN);   // 等待發送完成
+
+    return receive;
 } 
  // ---------------- Delay --------------------
 
@@ -384,18 +395,12 @@ uint8_t i2c_read(uint8_t ack){
         
         // 步驟 1: 設定指標到 0xFF
         i2c_start();
-        printf("yeah\n");
         i2c_write(MAX30102_WRITE);
-        printf("yeah\n");
         i2c_write(0xFF); // Part ID Register
-        printf("yeah\n");
         // 步驟 2: 讀取資料
         i2c_rep_start();
-        printf("yeah\n");
         i2c_write(MAX30102_READ);
-        printf("yeah\n");
         part_id = i2c_read(0); // 0 = NACK (只讀 1 byte 就停)
-        printf("yeah\n");
         i2c_stop();
         
         printf("Part ID: 0x%02X\n", part_id);
@@ -428,7 +433,7 @@ uint8_t i2c_read(uint8_t ack){
         i2c_start();
         i2c_write(MAX30102_WRITE);
         i2c_write(0x08);
-        i2c_write(0x00);
+        i2c_write(0b00010000); // rollover
         i2c_stop();
 
         // SpO2 Config
@@ -465,68 +470,68 @@ uint8_t i2c_read(uint8_t ack){
 
 
         while (1) {
-        // Do sth in main
-        /*// If typing is detected, pause system operations until Enter is pressed
-        if (buffer_size > 0) {
-            while (!GetString(str)) {}
-            keyboard_input(str);
-        }*/
-        //if (GetString(str)) keyboard_input(str);
-        //if (ADCON0bits.GO == 0) ADCON0bits.GO = 1;
-        uint8_t wr, rd;
-        uint8_t samples;
+            // Do sth in main
+            /*// If typing is detected, pause system operations until Enter is pressed
+            if (buffer_size > 0) {
+                while (!GetString(str)) {}
+                keyboard_input(str);
+            }*/
+            //if (GetString(str)) keyboard_input(str);
+            //if (ADCON0bits.GO == 0) ADCON0bits.GO = 1;
+            uint8_t wr, rd;
+            uint8_t samples;
 
-        // 1️⃣ 讀 FIFO WR_PTR
-        i2c_start();
-        i2c_write(MAX30102_WRITE);
-        i2c_write(0x04);
-        i2c_rep_start();
-        i2c_write(MAX30102_READ);
-        wr = i2c_read(0);
-        i2c_stop();
-
-        // 2️⃣ 讀 FIFO RD_PTR
-        i2c_start();
-        i2c_write(MAX30102_WRITE);
-        i2c_write(0x06);
-        i2c_rep_start();
-        i2c_write(MAX30102_READ);
-        rd = i2c_read(0);
-        i2c_stop();
-
-        samples = (wr - rd) & 0x1F;
-
-        // 3️⃣ 有資料才讀
-        if(samples > 0)
-        {
-            uint32_t red, ir;
-
+            // 1️⃣ 讀 FIFO WR_PTR
             i2c_start();
             i2c_write(MAX30102_WRITE);
-            i2c_write(0x07);
+            i2c_write(0x04);
             i2c_rep_start();
             i2c_write(MAX30102_READ);
-
-            red  = ((uint32_t)i2c_read(1)) << 16;
-            red |= ((uint32_t)i2c_read(1)) << 8;
-            red |= i2c_read(1);
-
-            ir   = ((uint32_t)i2c_read(1)) << 16;
-            ir  |= ((uint32_t)i2c_read(1)) << 8;
-            ir  |= i2c_read(0);
-
+            wr = i2c_read(0);
             i2c_stop();
 
-            red &= 0x3FFFF;
-            ir  &= 0x3FFFF;
+            // 2️⃣ 讀 FIFO RD_PTR
+            i2c_start();
+            i2c_write(MAX30102_WRITE);
+            i2c_write(0x06);
+            i2c_rep_start();
+            i2c_write(MAX30102_READ);
+            rd = i2c_read(0);
+            i2c_stop();
 
-            printf("RED=%lu IR=%lu\n", red, ir);
+            samples = (wr - rd) & 0x1F;
+
+            // 3️⃣ 有資料才讀
+            if(samples > 0)
+            {
+                uint32_t red, ir;
+
+                i2c_start();
+                i2c_write(MAX30102_WRITE);
+                i2c_write(0x07);
+                i2c_rep_start();
+                i2c_write(MAX30102_READ);
+
+                red  = ((uint32_t)i2c_read(1)) << 16;
+                red |= ((uint32_t)i2c_read(1)) << 8;
+                red |= i2c_read(1);
+
+                ir   = ((uint32_t)i2c_read(1)) << 16;
+                ir  |= ((uint32_t)i2c_read(1)) << 8;
+                ir  |= i2c_read(0);
+
+                i2c_stop();
+
+                red &= 0x3FFFF;
+                ir  &= 0x3FFFF;
+
+                printf("RED=%lu IR=%lu\n", red, ir);
 
 
-        __delay_ms(10); // 👈 非常重要
-            
+            }
+
+            __delay_ms(10); // 👈 非常重要
+
         }
-
-    }
 }
     
