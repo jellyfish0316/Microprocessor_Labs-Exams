@@ -1383,7 +1383,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _ack `uc ~T0 @X0 1 r1 ]
 [f ]
 "266
-[; ;main.c: 266:     uint8_t recieve =0;
+[; ;main.c: 266:     uint8_t recieve = 0;
 [v _recieve `uc ~T0 @X0 1 a ]
 [e = _recieve -> -> 0 `i `uc ]
 "267
@@ -1413,561 +1413,521 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 273: }
 [e :UE 347 ]
 }
-"276
-[; ;main.c: 276:     int delay(double sec) {
+"277
+[; ;main.c: 277:     int delay(double sec) {
 [v _delay `(i ~T0 @X0 1 ef1`d ]
 {
 [e :U _delay ]
 [v _sec `d ~T0 @X0 1 r1 ]
 [f ]
-"277
-[; ;main.c: 277:         btn_interr = 0;
-[e = _btn_interr -> -> 0 `i `a ]
 "278
-[; ;main.c: 278:         int loops = (int)(sec * 1000 / 10);
+[; ;main.c: 278:         btn_interr = 0;
+[e = _btn_interr -> -> 0 `i `a ]
+"279
+[; ;main.c: 279:         int loops = (int)(sec * 1000 / 10);
 [v _loops `i ~T0 @X0 1 a ]
 [e = _loops -> / * _sec -> -> 1000 `i `d -> -> 10 `i `d `i ]
-"279
-[; ;main.c: 279:         for (int i = 0; i < loops; i++) {
+"280
+[; ;main.c: 280:         for (int i = 0; i < loops; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
 [e $U 355  ]
 [e :U 352 ]
 {
-"280
-[; ;main.c: 280:             if (btn_interr) return -1;
+"281
+[; ;main.c: 281:             if (btn_interr) return -1;
 [e $ ! != -> _btn_interr `i -> 0 `i 356  ]
 [e ) -U -> 1 `i ]
 [e $UE 351  ]
 [e :U 356 ]
-"281
-[; ;main.c: 281:             _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "282
-[; ;main.c: 282:         }
+[; ;main.c: 282:             _delay((unsigned long)((10)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"283
+[; ;main.c: 283:         }
 }
 [e ++ _i -> 1 `i ]
 [e :U 355 ]
 [e $ < _i _loops 352  ]
 [e :U 353 ]
 }
-"283
-[; ;main.c: 283:         return 0;
+"284
+[; ;main.c: 284:         return 0;
 [e ) -> 0 `i ]
 [e $UE 351  ]
-"284
-[; ;main.c: 284:     }
+"285
+[; ;main.c: 285:     }
 [e :UE 351 ]
 }
 [v $root$_H_ISR `(v ~T0 @X0 0 e ]
-"286
-[; ;main.c: 286:     void __attribute__((picinterrupt(("high_priority")))) H_ISR(void) {
+"287
+[; ;main.c: 287:     void __attribute__((picinterrupt(("high_priority")))) H_ISR(void) {
 [v _H_ISR `(v ~T41 @X0 1 ef ]
 {
 [e :U _H_ISR ]
 [f ]
-"288
-[; ;main.c: 288:         if (INTCONbits.INT0IF) {
+"289
+[; ;main.c: 289:         if (INTCONbits.INT0IF) {
 [e $ ! != -> . . _INTCONbits 0 1 `i -> 0 `i 358  ]
 {
-"289
-[; ;main.c: 289:             INTCONbits.INT0IE = 0;
-[e = . . _INTCONbits 0 4 -> -> 0 `i `uc ]
 "290
-[; ;main.c: 290:             button_pressed();
-[e ( _button_pressed ..  ]
+[; ;main.c: 290:             INTCONbits.INT0IE = 0;
+[e = . . _INTCONbits 0 4 -> -> 0 `i `uc ]
 "291
-[; ;main.c: 291:             _delay((unsigned long)((50)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;main.c: 291:             button_pressed();
+[e ( _button_pressed ..  ]
 "292
-[; ;main.c: 292:             btn_interr = 1;
-[e = _btn_interr -> -> 1 `i `a ]
+[; ;main.c: 292:             _delay((unsigned long)((50)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "293
-[; ;main.c: 293:             INTCONbits.INT0IF = 0;
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 293:             btn_interr = 1;
+[e = _btn_interr -> -> 1 `i `a ]
 "294
-[; ;main.c: 294:             INTCONbits.INT0IE = 1;
-[e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
+[; ;main.c: 294:             INTCONbits.INT0IF = 0;
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
 "295
-[; ;main.c: 295:         }
+[; ;main.c: 295:             INTCONbits.INT0IE = 1;
+[e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
+"296
+[; ;main.c: 296:         }
 }
 [e :U 358 ]
-"297
-[; ;main.c: 297:         if (RCIF) {
+"298
+[; ;main.c: 298:         if (RCIF) {
 [e $ ! _RCIF 359  ]
 {
-"298
-[; ;main.c: 298:             if (RCSTAbits.OERR) {
+"299
+[; ;main.c: 299:             if (RCSTAbits.OERR) {
 [e $ ! != -> . . _RCSTAbits 0 1 `i -> 0 `i 360  ]
 {
-"299
-[; ;main.c: 299:                 CREN = 0;
-[e = _CREN -> -> 0 `i `b ]
 "300
-[; ;main.c: 300:                 __nop();
-[e ( ___nop ..  ]
+[; ;main.c: 300:                 CREN = 0;
+[e = _CREN -> -> 0 `i `b ]
 "301
-[; ;main.c: 301:                 CREN = 1;
-[e = _CREN -> -> 1 `i `b ]
+[; ;main.c: 301:                 __nop();
+[e ( ___nop ..  ]
 "302
-[; ;main.c: 302:             }
+[; ;main.c: 302:                 CREN = 1;
+[e = _CREN -> -> 1 `i `b ]
+"303
+[; ;main.c: 303:             }
 }
 [e :U 360 ]
-"304
-[; ;main.c: 304:             MyusartRead();
-[e ( _MyusartRead ..  ]
 "305
-[; ;main.c: 305:         }
+[; ;main.c: 305:             MyusartRead();
+[e ( _MyusartRead ..  ]
+"306
+[; ;main.c: 306:         }
 }
 [e :U 359 ]
-"306
-[; ;main.c: 306:     }
+"307
+[; ;main.c: 307:     }
 [e :UE 357 ]
 }
 [v $root$_Lo_ISR `(v ~T0 @X0 0 e ]
-"308
-[; ;main.c: 308:     void __attribute__((picinterrupt(("low_priority")))) Lo_ISR(void) {
+"309
+[; ;main.c: 309:     void __attribute__((picinterrupt(("low_priority")))) Lo_ISR(void) {
 [v _Lo_ISR `(v ~T42 @X0 1 ef ]
 {
 [e :U _Lo_ISR ]
 [f ]
-"309
-[; ;main.c: 309:         if (PIR1bits.ADIF) {
+"310
+[; ;main.c: 310:         if (PIR1bits.ADIF) {
 [e $ ! != -> . . _PIR1bits 0 6 `i -> 0 `i 362  ]
 {
-"310
-[; ;main.c: 310:             int value = (ADRESH << 8) + ADRESL;
+"311
+[; ;main.c: 311:             int value = (ADRESH << 8) + ADRESL;
 [v _value `i ~T0 @X0 1 a ]
 [e = _value + << -> _ADRESH `i -> 8 `i -> _ADRESL `i ]
-"311
-[; ;main.c: 311:             variable_register_changed(value);
-[e ( _variable_register_changed (1 _value ]
 "312
-[; ;main.c: 312:             PIR1bits.ADIF = 0;
-[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+[; ;main.c: 312:             variable_register_changed(value);
+[e ( _variable_register_changed (1 _value ]
 "313
-[; ;main.c: 313:             _delay((unsigned long)((5)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;main.c: 313:             PIR1bits.ADIF = 0;
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
 "314
-[; ;main.c: 314:         }
+[; ;main.c: 314:             _delay((unsigned long)((5)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"315
+[; ;main.c: 315:         }
 }
 [e :U 362 ]
-"317
-[; ;main.c: 317:         return;
-[e $UE 361  ]
 "318
-[; ;main.c: 318:     }
+[; ;main.c: 318:         return;
+[e $UE 361  ]
+"319
+[; ;main.c: 319:     }
 [e :UE 361 ]
 }
-"322
-[; ;main.c: 322:     void button_pressed(void) {
+"323
+[; ;main.c: 323:     void button_pressed(void) {
 [v _button_pressed `(v ~T0 @X0 1 ef ]
 {
 [e :U _button_pressed ]
 [f ]
-"329
-[; ;main.c: 329:     }
+"330
+[; ;main.c: 330:     }
 [e :UE 363 ]
 }
-"331
-[; ;main.c: 331:     void variable_register_changed(int value) {
+"332
+[; ;main.c: 332:     void variable_register_changed(int value) {
 [v _variable_register_changed `(v ~T0 @X0 1 ef1`i ]
 {
 [e :U _variable_register_changed ]
 [v _value `i ~T0 @X0 1 r1 ]
 [f ]
-"340
-[; ;main.c: 340:     }
+"341
+[; ;main.c: 341:     }
 [e :UE 364 ]
 }
-"342
-[; ;main.c: 342:     void keyboard_input(char *str) {
+"343
+[; ;main.c: 343:     void keyboard_input(char *str) {
 [v _keyboard_input `(v ~T0 @X0 1 ef1`*uc ]
 {
 [e :U _keyboard_input ]
 [v _str `*uc ~T0 @X0 1 r1 ]
 [f ]
-"357
-[; ;main.c: 357:     }
+"358
+[; ;main.c: 358:     }
 [e :UE 365 ]
 }
-"359
-[; ;main.c: 359:     void timer0_interrupted(void) {
-[v _timer0_interrupted `(v ~T0 @X0 1 ef ]
-{
-[e :U _timer0_interrupted ]
-[f ]
-"361
-[; ;main.c: 361:     }
-[e :UE 366 ]
-}
-"363
-[; ;main.c: 363:     void timer1_interrupted(void) {
-[v _timer1_interrupted `(v ~T0 @X0 1 ef ]
-{
-[e :U _timer1_interrupted ]
-[f ]
-"365
-[; ;main.c: 365:     }
-[e :UE 367 ]
-}
-"367
-[; ;main.c: 367:     void timer2_interrupted(void) {
-[v _timer2_interrupted `(v ~T0 @X0 1 ef ]
-{
-[e :U _timer2_interrupted ]
-[f ]
-"369
-[; ;main.c: 369:     }
-[e :UE 368 ]
-}
-"371
-[; ;main.c: 371:     void timer3_interrupted(void) {
-[v _timer3_interrupted `(v ~T0 @X0 1 ef ]
-{
-[e :U _timer3_interrupted ]
-[f ]
-"373
-[; ;main.c: 373:     }
-[e :UE 369 ]
-}
 [v $root$_main `(v ~T0 @X0 0 e ]
-"375
-[; ;main.c: 375:     void main() {
+"360
+[; ;main.c: 360:     void main() {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"376
-[; ;main.c: 376:         Initialize();
+"361
+[; ;main.c: 361:         Initialize();
 [e ( _Initialize ..  ]
-"383
-[; ;main.c: 383:         uint8_t sample_data[6];
+"368
+[; ;main.c: 368:         uint8_t sample_data[6];
 [v _sample_data `uc ~T0 @X0 -> 6 `i a ]
-"384
-[; ;main.c: 384:         uint32_t red_val = 0;
+"369
+[; ;main.c: 369:         uint32_t red_val = 0;
 [v _red_val `ul ~T0 @X0 1 a ]
 [e = _red_val -> -> -> 0 `i `l `ul ]
-"385
-[; ;main.c: 385:         uint32_t ir_val = 0;
+"370
+[; ;main.c: 370:         uint32_t ir_val = 0;
 [v _ir_val `ul ~T0 @X0 1 a ]
 [e = _ir_val -> -> -> 0 `i `l `ul ]
-"387
-[; ;main.c: 387:         char str[100];
+"372
+[; ;main.c: 372:         char str[100];
 [v _str `uc ~T0 @X0 -> 100 `i a ]
-"397
-[; ;main.c: 397:         printf("Check Sensor ID...\n");
+"382
+[; ;main.c: 382:         printf("Check Sensor ID...\n");
 [e ( _printf :s 2C ]
-"399
-[; ;main.c: 399:         uint8_t part_id;
+"384
+[; ;main.c: 384:         uint8_t part_id;
 [v _part_id `uc ~T0 @X0 1 a ]
-"402
-[; ;main.c: 402:         i2c_start();
+"387
+[; ;main.c: 387:         i2c_start();
 [e ( _i2c_start ..  ]
-"403
-[; ;main.c: 403:         printf("yeah\n");
+"388
+[; ;main.c: 388:         printf("yeah\n");
 [e ( _printf :s 3C ]
-"404
-[; ;main.c: 404:         i2c_write((0xAE));
+"389
+[; ;main.c: 389:         i2c_write((0xAE));
 [e ( _i2c_write (1 -> -> 174 `i `uc ]
-"405
-[; ;main.c: 405:         printf("yeah\n");
+"390
+[; ;main.c: 390:         printf("yeah\n");
 [e ( _printf :s 4C ]
-"406
-[; ;main.c: 406:         i2c_write(0xFF);
+"391
+[; ;main.c: 391:         i2c_write(0xFF);
 [e ( _i2c_write (1 -> -> 255 `i `uc ]
-"407
-[; ;main.c: 407:         printf("yeah\n");
+"392
+[; ;main.c: 392:         printf("yeah\n");
 [e ( _printf :s 5C ]
-"409
-[; ;main.c: 409:         i2c_rep_start();
+"394
+[; ;main.c: 394:         i2c_rep_start();
 [e ( _i2c_rep_start ..  ]
-"410
-[; ;main.c: 410:         printf("yeah\n");
+"395
+[; ;main.c: 395:         printf("yeah\n");
 [e ( _printf :s 6C ]
-"411
-[; ;main.c: 411:         i2c_write((0xAF));
+"396
+[; ;main.c: 396:         i2c_write((0xAF));
 [e ( _i2c_write (1 -> -> 175 `i `uc ]
-"412
-[; ;main.c: 412:         printf("yeah\n");
+"397
+[; ;main.c: 397:         printf("yeah\n");
 [e ( _printf :s 7C ]
-"413
-[; ;main.c: 413:         part_id = i2c_read(0);
+"398
+[; ;main.c: 398:         part_id = i2c_read(0);
 [e = _part_id ( _i2c_read (1 -> -> 0 `i `uc ]
-"414
-[; ;main.c: 414:         printf("yeah\n");
+"399
+[; ;main.c: 399:         printf("yeah\n");
 [e ( _printf :s 8C ]
-"415
-[; ;main.c: 415:         i2c_stop();
+"400
+[; ;main.c: 400:         i2c_stop();
 [e ( _i2c_stop ..  ]
-"417
-[; ;main.c: 417:         printf("Part ID: 0x%02X\n", part_id);
+"402
+[; ;main.c: 402:         printf("Part ID: 0x%02X\n", part_id);
 [e ( _printf , (. :s 9C -> _part_id `i ]
-"419
-[; ;main.c: 419:         if(part_id == 0x15) {
-[e $ ! == -> _part_id `i -> 21 `i 371  ]
+"404
+[; ;main.c: 404:         if(part_id == 0x15) {
+[e $ ! == -> _part_id `i -> 21 `i 367  ]
 {
-"420
-[; ;main.c: 420:             printf("MAX30102 is ONLINE! \n");
+"405
+[; ;main.c: 405:             printf("MAX30102 is ONLINE! \n");
 [e ( _printf :s 10C ]
-"421
-[; ;main.c: 421:         } else {
+"406
+[; ;main.c: 406:         } else {
 }
-[e $U 372  ]
-[e :U 371 ]
+[e $U 368  ]
+[e :U 367 ]
 {
-"422
-[; ;main.c: 422:             printf("Wrong ID or Bus Error.\n");
+"407
+[; ;main.c: 407:             printf("Wrong ID or Bus Error.\n");
 [e ( _printf :s 11C ]
-"423
-[; ;main.c: 423:         }
+"408
+[; ;main.c: 408:         }
 }
-[e :U 372 ]
-"425
-[; ;main.c: 425:         _delay((unsigned long)((1000)*(8000000/4000.0)));
+[e :U 368 ]
+"410
+[; ;main.c: 410:         _delay((unsigned long)((1000)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"428
-[; ;main.c: 428:         i2c_start();
+"413
+[; ;main.c: 413:         i2c_start();
 [e ( _i2c_start ..  ]
-"429
-[; ;main.c: 429:         i2c_write((0xAE));
+"414
+[; ;main.c: 414:         i2c_write((0xAE));
 [e ( _i2c_write (1 -> -> 174 `i `uc ]
-"430
-[; ;main.c: 430:         i2c_write(0x09);
+"415
+[; ;main.c: 415:         i2c_write(0x09);
 [e ( _i2c_write (1 -> -> 9 `i `uc ]
-"431
-[; ;main.c: 431:         i2c_write(0x40);
+"416
+[; ;main.c: 416:         i2c_write(0x40);
 [e ( _i2c_write (1 -> -> 64 `i `uc ]
-"432
-[; ;main.c: 432:         i2c_stop();
+"417
+[; ;main.c: 417:         i2c_stop();
 [e ( _i2c_stop ..  ]
-"433
-[; ;main.c: 433:         _delay((unsigned long)((10)*(8000000/4000.0)));
+"418
+[; ;main.c: 418:         _delay((unsigned long)((10)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"435
-[; ;main.c: 435:         i2c_start();
+"420
+[; ;main.c: 420:         i2c_start();
 [e ( _i2c_start ..  ]
-"436
-[; ;main.c: 436:         i2c_write((0xAE));
+"421
+[; ;main.c: 421:         i2c_write((0xAE));
 [e ( _i2c_write (1 -> -> 174 `i `uc ]
-"437
-[; ;main.c: 437:         i2c_write(0x04);
+"422
+[; ;main.c: 422:         i2c_write(0x04);
 [e ( _i2c_write (1 -> -> 4 `i `uc ]
-"438
-[; ;main.c: 438:         i2c_write(0x00);
+"423
+[; ;main.c: 423:         i2c_write(0x00);
 [e ( _i2c_write (1 -> -> 0 `i `uc ]
-"439
-[; ;main.c: 439:         i2c_write(0x00);
+"424
+[; ;main.c: 424:         i2c_write(0x00);
 [e ( _i2c_write (1 -> -> 0 `i `uc ]
-"440
-[; ;main.c: 440:         i2c_write(0x00);
+"425
+[; ;main.c: 425:         i2c_write(0x00);
 [e ( _i2c_write (1 -> -> 0 `i `uc ]
-"441
-[; ;main.c: 441:         i2c_stop();
+"426
+[; ;main.c: 426:         i2c_stop();
 [e ( _i2c_stop ..  ]
-"444
-[; ;main.c: 444:         i2c_start();
+"429
+[; ;main.c: 429:         i2c_start();
 [e ( _i2c_start ..  ]
-"445
-[; ;main.c: 445:         i2c_write((0xAE));
+"430
+[; ;main.c: 430:         i2c_write((0xAE));
 [e ( _i2c_write (1 -> -> 174 `i `uc ]
-"446
-[; ;main.c: 446:         i2c_write(0x08);
+"431
+[; ;main.c: 431:         i2c_write(0x08);
 [e ( _i2c_write (1 -> -> 8 `i `uc ]
-"447
-[; ;main.c: 447:         i2c_write(0x00);
-[e ( _i2c_write (1 -> -> 0 `i `uc ]
-"448
-[; ;main.c: 448:         i2c_stop();
+"432
+[; ;main.c: 432:         i2c_write(0b00010000);
+[e ( _i2c_write (1 -> -> 16 `i `uc ]
+"433
+[; ;main.c: 433:         i2c_stop();
 [e ( _i2c_stop ..  ]
-"454
-[; ;main.c: 454:         i2c_start();
+"439
+[; ;main.c: 439:         i2c_start();
 [e ( _i2c_start ..  ]
-"455
-[; ;main.c: 455:         i2c_write((0xAE));
+"440
+[; ;main.c: 440:         i2c_write((0xAE));
 [e ( _i2c_write (1 -> -> 174 `i `uc ]
-"456
-[; ;main.c: 456:         i2c_write(0x0A);
+"441
+[; ;main.c: 441:         i2c_write(0x0A);
 [e ( _i2c_write (1 -> -> 10 `i `uc ]
-"457
-[; ;main.c: 457:         i2c_write(0b01000111);
+"442
+[; ;main.c: 442:         i2c_write(0b01000111);
 [e ( _i2c_write (1 -> -> 71 `i `uc ]
-"458
-[; ;main.c: 458:         i2c_stop();
+"443
+[; ;main.c: 443:         i2c_stop();
 [e ( _i2c_stop ..  ]
-"461
-[; ;main.c: 461:         i2c_start();
+"446
+[; ;main.c: 446:         i2c_start();
 [e ( _i2c_start ..  ]
-"462
-[; ;main.c: 462:         i2c_write((0xAE));
+"447
+[; ;main.c: 447:         i2c_write((0xAE));
 [e ( _i2c_write (1 -> -> 174 `i `uc ]
-"463
-[; ;main.c: 463:         i2c_write(0x0C);
+"448
+[; ;main.c: 448:         i2c_write(0x0C);
 [e ( _i2c_write (1 -> -> 12 `i `uc ]
-"464
-[; ;main.c: 464:         i2c_write(0x24);
+"449
+[; ;main.c: 449:         i2c_write(0x24);
 [e ( _i2c_write (1 -> -> 36 `i `uc ]
-"465
-[; ;main.c: 465:         i2c_stop();
+"450
+[; ;main.c: 450:         i2c_stop();
+[e ( _i2c_stop ..  ]
+"453
+[; ;main.c: 453:         i2c_start();
+[e ( _i2c_start ..  ]
+"454
+[; ;main.c: 454:         i2c_write((0xAE));
+[e ( _i2c_write (1 -> -> 174 `i `uc ]
+"455
+[; ;main.c: 455:         i2c_write(0x0D);
+[e ( _i2c_write (1 -> -> 13 `i `uc ]
+"456
+[; ;main.c: 456:         i2c_write(0x24);
+[e ( _i2c_write (1 -> -> 36 `i `uc ]
+"457
+[; ;main.c: 457:         i2c_stop();
+[e ( _i2c_stop ..  ]
+"460
+[; ;main.c: 460:         i2c_start();
+[e ( _i2c_start ..  ]
+"461
+[; ;main.c: 461:         i2c_write((0xAE));
+[e ( _i2c_write (1 -> -> 174 `i `uc ]
+"462
+[; ;main.c: 462:         i2c_write(0x09);
+[e ( _i2c_write (1 -> -> 9 `i `uc ]
+"463
+[; ;main.c: 463:         i2c_write(0x03);
+[e ( _i2c_write (1 -> -> 3 `i `uc ]
+"464
+[; ;main.c: 464:         i2c_stop();
 [e ( _i2c_stop ..  ]
 "468
-[; ;main.c: 468:         i2c_start();
-[e ( _i2c_start ..  ]
-"469
-[; ;main.c: 469:         i2c_write((0xAE));
-[e ( _i2c_write (1 -> -> 174 `i `uc ]
-"470
-[; ;main.c: 470:         i2c_write(0x0D);
-[e ( _i2c_write (1 -> -> 13 `i `uc ]
-"471
-[; ;main.c: 471:         i2c_write(0x24);
-[e ( _i2c_write (1 -> -> 36 `i `uc ]
-"472
-[; ;main.c: 472:         i2c_stop();
-[e ( _i2c_stop ..  ]
-"475
-[; ;main.c: 475:         i2c_start();
-[e ( _i2c_start ..  ]
-"476
-[; ;main.c: 476:         i2c_write((0xAE));
-[e ( _i2c_write (1 -> -> 174 `i `uc ]
-"477
-[; ;main.c: 477:         i2c_write(0x09);
-[e ( _i2c_write (1 -> -> 9 `i `uc ]
-"478
-[; ;main.c: 478:         i2c_write(0x03);
-[e ( _i2c_write (1 -> -> 3 `i `uc ]
-"479
-[; ;main.c: 479:         i2c_stop();
-[e ( _i2c_stop ..  ]
-"483
-[; ;main.c: 483:         while (1) {
-[e :U 374 ]
+[; ;main.c: 468:         while (1) {
+[e :U 370 ]
 {
-"492
-[; ;main.c: 492:         uint8_t wr, rd;
+"477
+[; ;main.c: 477:         uint8_t wr, rd;
 [v _wr `uc ~T0 @X0 1 a ]
 [v _rd `uc ~T0 @X0 1 a ]
-"493
-[; ;main.c: 493:         uint8_t samples;
+"478
+[; ;main.c: 478:         uint8_t samples;
 [v _samples `uc ~T0 @X0 1 a ]
-"496
-[; ;main.c: 496:         i2c_start();
+"481
+[; ;main.c: 481:         i2c_start();
 [e ( _i2c_start ..  ]
-"497
-[; ;main.c: 497:         i2c_write((0xAE));
+"482
+[; ;main.c: 482:         i2c_write((0xAE));
 [e ( _i2c_write (1 -> -> 174 `i `uc ]
-"498
-[; ;main.c: 498:         i2c_write(0x04);
+"483
+[; ;main.c: 483:         i2c_write(0x04);
 [e ( _i2c_write (1 -> -> 4 `i `uc ]
-"499
-[; ;main.c: 499:         i2c_rep_start();
+"484
+[; ;main.c: 484:         i2c_rep_start();
 [e ( _i2c_rep_start ..  ]
-"500
-[; ;main.c: 500:         i2c_write((0xAF));
+"485
+[; ;main.c: 485:         i2c_write((0xAF));
 [e ( _i2c_write (1 -> -> 175 `i `uc ]
-"501
-[; ;main.c: 501:         wr = i2c_read(0);
+"486
+[; ;main.c: 486:         wr = i2c_read(0);
 [e = _wr ( _i2c_read (1 -> -> 0 `i `uc ]
-"502
-[; ;main.c: 502:         i2c_stop();
+"487
+[; ;main.c: 487:         i2c_stop();
 [e ( _i2c_stop ..  ]
-"505
-[; ;main.c: 505:         i2c_start();
+"490
+[; ;main.c: 490:         i2c_start();
 [e ( _i2c_start ..  ]
-"506
-[; ;main.c: 506:         i2c_write((0xAE));
+"491
+[; ;main.c: 491:         i2c_write((0xAE));
 [e ( _i2c_write (1 -> -> 174 `i `uc ]
-"507
-[; ;main.c: 507:         i2c_write(0x06);
+"492
+[; ;main.c: 492:         i2c_write(0x06);
 [e ( _i2c_write (1 -> -> 6 `i `uc ]
-"508
-[; ;main.c: 508:         i2c_rep_start();
+"493
+[; ;main.c: 493:         i2c_rep_start();
 [e ( _i2c_rep_start ..  ]
-"509
-[; ;main.c: 509:         i2c_write((0xAF));
+"494
+[; ;main.c: 494:         i2c_write((0xAF));
 [e ( _i2c_write (1 -> -> 175 `i `uc ]
-"510
-[; ;main.c: 510:         rd = i2c_read(0);
+"495
+[; ;main.c: 495:         rd = i2c_read(0);
 [e = _rd ( _i2c_read (1 -> -> 0 `i `uc ]
-"511
-[; ;main.c: 511:         i2c_stop();
+"496
+[; ;main.c: 496:         i2c_stop();
 [e ( _i2c_stop ..  ]
-"513
-[; ;main.c: 513:         samples = (wr - rd) & 0x1F;
+"498
+[; ;main.c: 498:         samples = (wr - rd) & 0x1F;
 [e = _samples -> & - -> _wr `i -> _rd `i -> 31 `i `uc ]
-"516
-[; ;main.c: 516:         if(samples > 0)
-[e $ ! > -> _samples `i -> 0 `i 376  ]
-"517
-[; ;main.c: 517:         {
+"501
+[; ;main.c: 501:         if(samples > 0)
+[e $ ! > -> _samples `i -> 0 `i 372  ]
+"502
+[; ;main.c: 502:         {
 {
-"518
-[; ;main.c: 518:             uint32_t red, ir;
+"503
+[; ;main.c: 503:             uint32_t red, ir;
 [v _red `ul ~T0 @X0 1 a ]
 [v _ir `ul ~T0 @X0 1 a ]
-"520
-[; ;main.c: 520:             i2c_start();
+"505
+[; ;main.c: 505:             i2c_start();
 [e ( _i2c_start ..  ]
-"521
-[; ;main.c: 521:             i2c_write((0xAE));
+"506
+[; ;main.c: 506:             i2c_write((0xAE));
 [e ( _i2c_write (1 -> -> 174 `i `uc ]
-"522
-[; ;main.c: 522:             i2c_write(0x07);
+"507
+[; ;main.c: 507:             i2c_write(0x07);
 [e ( _i2c_write (1 -> -> 7 `i `uc ]
-"523
-[; ;main.c: 523:             i2c_rep_start();
+"508
+[; ;main.c: 508:             i2c_rep_start();
 [e ( _i2c_rep_start ..  ]
-"524
-[; ;main.c: 524:             i2c_write((0xAF));
+"509
+[; ;main.c: 509:             i2c_write((0xAF));
 [e ( _i2c_write (1 -> -> 175 `i `uc ]
-"526
-[; ;main.c: 526:             red = ((uint32_t)i2c_read(1)) << 16;
+"511
+[; ;main.c: 511:             red = ((uint32_t)i2c_read(1)) << 16;
 [e = _red << -> ( _i2c_read (1 -> -> 1 `i `uc `ul -> 16 `i ]
-"527
-[; ;main.c: 527:             red |= ((uint32_t)i2c_read(1)) << 8;
+"512
+[; ;main.c: 512:             red |= ((uint32_t)i2c_read(1)) << 8;
 [e =| _red << -> ( _i2c_read (1 -> -> 1 `i `uc `ul -> 8 `i ]
-"528
-[; ;main.c: 528:             red |= i2c_read(1);
+"513
+[; ;main.c: 513:             red |= i2c_read(1);
 [e =| _red -> ( _i2c_read (1 -> -> 1 `i `uc `ul ]
-"530
-[; ;main.c: 530:             ir = ((uint32_t)i2c_read(1)) << 16;
+"515
+[; ;main.c: 515:             ir = ((uint32_t)i2c_read(1)) << 16;
 [e = _ir << -> ( _i2c_read (1 -> -> 1 `i `uc `ul -> 16 `i ]
-"531
-[; ;main.c: 531:             ir |= ((uint32_t)i2c_read(1)) << 8;
+"516
+[; ;main.c: 516:             ir |= ((uint32_t)i2c_read(1)) << 8;
 [e =| _ir << -> ( _i2c_read (1 -> -> 1 `i `uc `ul -> 8 `i ]
-"532
-[; ;main.c: 532:             ir |= i2c_read(0);
+"517
+[; ;main.c: 517:             ir |= i2c_read(0);
 [e =| _ir -> ( _i2c_read (1 -> -> 0 `i `uc `ul ]
-"534
-[; ;main.c: 534:             i2c_stop();
+"519
+[; ;main.c: 519:             i2c_stop();
 [e ( _i2c_stop ..  ]
-"536
-[; ;main.c: 536:             red &= 0x3FFFF;
+"521
+[; ;main.c: 521:             red &= 0x3FFFF;
 [e =& _red -> -> 262143 `l `ul ]
-"537
-[; ;main.c: 537:             ir &= 0x3FFFF;
+"522
+[; ;main.c: 522:             ir &= 0x3FFFF;
 [e =& _ir -> -> 262143 `l `ul ]
-"539
-[; ;main.c: 539:             printf("RED=%lu IR=%lu\n", red, ir);
+"524
+[; ;main.c: 524:             printf("RED=%lu IR=%lu\n", red, ir);
 [e ( _printf , , (. :s 12C _red _ir ]
-"542
-[; ;main.c: 542:         _delay((unsigned long)((10)*(8000000/4000.0)));
+"527
+[; ;main.c: 527:         _delay((unsigned long)((10)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"544
-[; ;main.c: 544:         }
+"529
+[; ;main.c: 529:         }
 }
-[e :U 376 ]
-"546
-[; ;main.c: 546:     }
+[e :U 372 ]
+"531
+[; ;main.c: 531:     }
 }
-[e :U 373 ]
-[e $U 374  ]
-[e :U 375 ]
-"547
-[; ;main.c: 547: }
-[e :UE 370 ]
+[e :U 369 ]
+[e $U 370  ]
+[e :U 371 ]
+"532
+[; ;main.c: 532: }
+[e :UE 366 ]
 }
 [p f _printf 10519572 ]
 [a 1C 27 91 50 74 27 91 72 0 ]

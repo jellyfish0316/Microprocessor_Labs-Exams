@@ -5241,7 +5241,7 @@ void i2c_write(uint8_t i2c_data){
 }
 
 uint8_t i2c_read(uint8_t ack){
-    uint8_t recieve =0;
+    uint8_t recieve = 0;
     i2c_is_idle();
     SSPCON2bits.RCEN = 1;
     while(SSPSTATbits.BF != 1);
@@ -5249,6 +5249,7 @@ uint8_t i2c_read(uint8_t ack){
     SSPCON2bits.ACKEN = ack;
     return recieve;
 }
+
 
 
     int delay(double sec) {
@@ -5307,27 +5308,11 @@ uint8_t i2c_read(uint8_t ack){
     }
 
     void variable_register_changed(int value) {
-# 340 "main.c"
+# 341 "main.c"
     }
 
     void keyboard_input(char *str) {
-# 357 "main.c"
-    }
-
-    void timer0_interrupted(void) {
-
-    }
-
-    void timer1_interrupted(void) {
-
-    }
-
-    void timer2_interrupted(void) {
-
-    }
-
-    void timer3_interrupted(void) {
-
+# 358 "main.c"
     }
 
     void main() {
@@ -5343,7 +5328,7 @@ uint8_t i2c_read(uint8_t ack){
         uint32_t ir_val = 0;
 
         char str[100];
-# 397 "main.c"
+# 382 "main.c"
         printf("Check Sensor ID...\n");
 
         uint8_t part_id;
@@ -5394,7 +5379,7 @@ uint8_t i2c_read(uint8_t ack){
         i2c_start();
         i2c_write((0xAE));
         i2c_write(0x08);
-        i2c_write(0x00);
+        i2c_write(0b00010000);
         i2c_stop();
 
 
@@ -5431,7 +5416,7 @@ uint8_t i2c_read(uint8_t ack){
 
 
         while (1) {
-# 492 "main.c"
+# 477 "main.c"
         uint8_t wr, rd;
         uint8_t samples;
 
