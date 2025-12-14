@@ -6,10 +6,10 @@ Linker command line:
   --edf=C:\Program Files\Microchip\xc8\v3.00\pic\dat\20241204225717_en.msgs \
   -cn -h+dist/default/debug\finalprojecttest.X.debug.sym \
   --cmf=dist/default/debug\finalprojecttest.X.debug.cmf -z -Q18F4520 \
-  -oC:\Users\bryan\AppData\Local\Temp\xcAsml8.\driver_tmp_3.o \
+  -oC:\Users\bryan\AppData\Local\Temp\xcAs5cs.\driver_tmp_3.o \
   --defsym=__MPLAB_BUILD=1 --fixupoverflow=error \
   -Mdist/default/debug/finalprojecttest.X.debug.map \
-  --md=C:\Users\bryan\AppData\Local\Temp\xcAsml8.\driver_tmp_0.dat -E1 \
+  --md=C:\Users\bryan\AppData\Local\Temp\xcAs5cs.\driver_tmp_0.dat -E1 \
   -ver=XC8 Compiler -ACODE=00h-07DBFh -ACONST=00h-07DBFh \
   -ASMALLCONST=0600h-06FFhx119,07D00h-07DBFh -AMEDIUMCONST=0600h-07DBFh \
   -ACOMRAM=01h-07Fh -AABS1=00h-05F3h -ABIGRAM=01h-05F3h \
@@ -27,7 +27,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\bryan\AppData\Local\Temp\xcAsml8.\driver_tmp_14.o \
+  C:\Users\bryan\AppData\Local\Temp\xcAs5cs.\driver_tmp_14.o \
   dist/default/debug\finalprojecttest.X.debug.o 
 
 Object code version is 3.11
@@ -37,7 +37,7 @@ Machine type is 18F4520
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\bryan\AppData\Local\Temp\xcAsml8.\driver_tmp_14.o
+C:\Users\bryan\AppData\Local\Temp\xcAs5cs.\driver_tmp_14.o
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 init                                 72       72        4        C       0
@@ -672,33 +672,22 @@ C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\abs.c
 
 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\abs.c estimated size: 52
 
-button.c
-		_button_initialize		CODE           	143E	0000	8
-
-button.c estimated size: 8
-
 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\nf_fputc.c
 		_fputc         		CODE           	0E5A	0000	202
 
 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\nf_fputc.c estimated size: 202
 
-uart.c
-		_putch         		CODE           	1142	0000	98
-		_uart_read     		CODE           	11A4	0000	68
-		_uart_initialize		CODE           	1398	0000	34
+src/button.c
+		_button_initialize		CODE           	143E	0000	8
 
-uart.c estimated size: 200
+src/button.c estimated size: 8
 
-max30102.c
-		_max30102_read_reg		CODE           	125E	0000	44
-		_max30102_initialize		CODE           	1050	0000	126
-		_max30102_available		CODE           	140A	0000	24
-		_max30102_write_reg		CODE           	13BA	0000	30
-		_max30102_read_fifo		CODE           	0A48	0000	320
+C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\printf.c
+		_printf        		CODE           	13D8	0000	26
 
-max30102.c estimated size: 544
+C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\printf.c estimated size: 26
 
-i2c.c
+src/i2c.c
 		_i2c_initialize		CODE           	13F2	0000	24
 		_i2c_start     		CODE           	144E	0000	8
 		_i2c_rep_start 		CODE           	1456	0000	8
@@ -707,18 +696,17 @@ i2c.c
 		_i2c_stop      		CODE           	1446	0000	8
 		_i2c_read      		CODE           	12DA	0000	40
 
-i2c.c estimated size: 166
+src/i2c.c estimated size: 166
 
-C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\printf.c
-		_printf        		CODE           	13D8	0000	26
+src/main.c
+		_variable_register_changed		CODE           	1434	0000	10
+		_Lo_ISR        		CODE           	0018	0000	90
+		_button_pressed		CODE           	1374	0000	36
+		_H_ISR         		CODE           	0008	0000	122
+		_main          		CODE           	0D7C	0000	222
+		_system_initialize		CODE           	128A	0000	40
 
-C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\printf.c estimated size: 26
-
-adc.c
-		_adc_start_conversion		CODE           	1422	0000	18
-		_adc_initialize		CODE           	1328	0000	38
-
-adc.c estimated size: 56
+src/main.c estimated size: 520
 
 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\llmod.c
 		___llmod       		CODE           	0FC8	0000	136
@@ -740,15 +728,27 @@ shared
 
 shared estimated size: 24
 
-main.c
-		_variable_register_changed		CODE           	1434	0000	10
-		_Lo_ISR        		CODE           	0018	0000	90
-		_button_pressed		CODE           	1374	0000	36
-		_H_ISR         		CODE           	0008	0000	122
-		_main          		CODE           	0D7C	0000	222
-		_system_initialize		CODE           	128A	0000	40
+src/adc.c
+		_adc_start_conversion		CODE           	1422	0000	18
+		_adc_initialize		CODE           	1328	0000	38
 
-main.c estimated size: 520
+src/adc.c estimated size: 56
+
+src/max30102.c
+		_max30102_read_reg		CODE           	125E	0000	44
+		_max30102_initialize		CODE           	1050	0000	126
+		_max30102_available		CODE           	140A	0000	24
+		_max30102_write_reg		CODE           	13BA	0000	30
+		_max30102_read_fifo		CODE           	0A48	0000	320
+
+src/max30102.c estimated size: 544
+
+src/uart.c
+		_putch         		CODE           	1142	0000	98
+		_uart_read     		CODE           	11A4	0000	68
+		_uart_initialize		CODE           	1398	0000	34
+
+src/uart.c estimated size: 200
 
 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\aldiv.c
 		___aldiv       		CODE           	0B88	0000	266
