@@ -3,10 +3,56 @@
 [d edition pro ]
 [d chip 18F4520 ]
 [d frameptr 4065 ]
+"98 C:\Users\bryan\MPLABXProjects\FinalProject.X\addadc.c
+[v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
+"114
+[v _Button_Initialize Button_Initialize `(v  1 e 1 0 ]
+"122
+[v _UART_Initialize UART_Initialize `(v  1 e 1 0 ]
+"166
+[v _I2C_Initialize I2C_Initialize `(v  1 e 1 0 ]
+"176
+[v _Initialize Initialize `(v  1 e 1 0 ]
+"197
+[v _putch putch `(v  1 e 1 0 ]
+"209
+[v _ClearBuffer ClearBuffer `(v  1 e 1 0 ]
+"215
+[v _MyusartRead MyusartRead `(v  1 e 1 0 ]
+"239
+[v _i2c_is_idle i2c_is_idle `(v  1 e 1 0 ]
+"244
+[v _i2c_start i2c_start `(v  1 e 1 0 ]
+"249
+[v _i2c_rep_start i2c_rep_start `(v  1 e 1 0 ]
+"254
+[v _i2c_stop i2c_stop `(v  1 e 1 0 ]
+"259
+[v _i2c_write i2c_write `(v  1 e 1 0 ]
+"266
+[v _i2c_read i2c_read `(uc  1 e 1 0 ]
+"288
+[v _H_ISR H_ISR `IIH(v  1 e 1 0 ]
+"314
+[v _Lo_ISR Lo_ISR `IIL(v  1 e 1 0 ]
+"328
+[v _button_pressed button_pressed `(v  1 e 1 0 ]
+"338
+[v _variable_register_changed variable_register_changed `(v  1 e 1 0 ]
+"368
+[v _main main `(v  1 e 1 0 ]
 "7 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"1 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\abs.c
+[v _abs abs `(i  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\almod.c
+[v ___almod __almod `(l  1 e 4 0 ]
 "193 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c
 [v _pad pad `(v  1 s 1 pad ]
+"513
+[v _dtoa dtoa `(v  1 s 1 dtoa ]
 "1001
 [v _utoa utoa `(v  1 s 1 utoa ]
 "1055
@@ -53,40 +99,51 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"121 C:\Users\bryan\MPLABXProjects\FinalProject.X\main.c
-[v _UART_Initialize UART_Initialize `(v  1 e 1 0 ]
-"165
-[v _I2C_Initialize I2C_Initialize `(v  1 e 1 0 ]
-"175
-[v _Initialize Initialize `(v  1 e 1 0 ]
-"196
-[v _putch putch `(v  1 e 1 0 ]
-"208
-[v _ClearBuffer ClearBuffer `(v  1 e 1 0 ]
-"214
-[v _MyusartRead MyusartRead `(v  1 e 1 0 ]
-"238
-[v _i2c_is_idle i2c_is_idle `(v  1 e 1 0 ]
-"243
-[v _i2c_start i2c_start `(v  1 e 1 0 ]
-"248
-[v _i2c_rep_start i2c_rep_start `(v  1 e 1 0 ]
-"253
-[v _i2c_stop i2c_stop `(v  1 e 1 0 ]
-"258
-[v _i2c_write i2c_write `(v  1 e 1 0 ]
-"265
-[v _i2c_read i2c_read `(uc  1 e 1 0 ]
-"287
-[v _H_ISR H_ISR `IIH(v  1 e 1 0 ]
-"309
-[v _Lo_ISR Lo_ISR `IIL(v  1 e 1 0 ]
-"323
-[v _button_pressed button_pressed `(v  1 e 1 0 ]
-"332
-[v _variable_register_changed variable_register_changed `(v  1 e 1 0 ]
-"360
-[v _main main `(v  1 e 1 0 ]
+"72 C:\Users\bryan\MPLABXProjects\FinalProject.X\addadc.c
+[v _buffer buffer `[100]uc  1 e 100 0 ]
+"73
+[v _buffer_size buffer_size `i  1 e 2 0 ]
+"74
+[v _btn_interr btn_interr `a  1 e 1 0 ]
+"76
+[v _alcohol alcohol `i  1 e 2 0 ]
+"78
+[v _mode mode `i  1 e 2 0 ]
+[s S839 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"313 C:\Program Files\Microchip\xc8\v3.00\pic\include\proc/pic18f4520.h
+[s S848 . 1 `uc 1 INT0 1 0 :1:0 
+`uc 1 INT1 1 0 :1:1 
+`uc 1 INT2 1 0 :1:2 
+`uc 1 CCP2 1 0 :1:3 
+`uc 1 KBI0 1 0 :1:4 
+`uc 1 KBI1 1 0 :1:5 
+`uc 1 KBI2 1 0 :1:6 
+`uc 1 KBI3 1 0 :1:7 
+]
+[s S857 . 1 `uc 1 AN12 1 0 :1:0 
+`uc 1 AN10 1 0 :1:1 
+`uc 1 AN8 1 0 :1:2 
+`uc 1 AN9 1 0 :1:3 
+`uc 1 AN11 1 0 :1:4 
+`uc 1 PGM 1 0 :1:5 
+`uc 1 PGC 1 0 :1:6 
+`uc 1 PGD 1 0 :1:7 
+]
+[s S866 . 1 `uc 1 FLT0 1 0 :1:0 
+]
+[s S868 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 CCP2_PA2 1 0 :1:3 
+]
+[u S871 . 1 `S839 1 . 1 0 `S848 1 . 1 0 `S857 1 . 1 0 `S866 1 . 1 0 `S868 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES871  1 e 1 @3969 ]
 [s S24 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
@@ -96,7 +153,7 @@
 `uc 1 TRISA6 1 0 :1:6 
 `uc 1 TRISA7 1 0 :1:7 
 ]
-"1507 C:\Program Files\Microchip\xc8\v3.00\pic\include\proc/pic18f4520.h
+"1507
 [s S33 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
@@ -513,32 +570,26 @@
 [v _flags flags `uc  1 s 1 flags ]
 "185
 [v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
-"72 C:\Users\bryan\MPLABXProjects\FinalProject.X\main.c
-[v _buffer buffer `[100]uc  1 e 100 0 ]
-"73
-[v _buffer_size buffer_size `i  1 e 2 0 ]
-"74
-[v _btn_interr btn_interr `a  1 e 1 0 ]
-"360
+"368 C:\Users\bryan\MPLABXProjects\FinalProject.X\addadc.c
 [v _main main `(v  1 e 1 0 ]
 {
-"503
-[v main@ir ir `ul  1 a 4 90 ]
-[v main@red red `ul  1 a 4 83 ]
-"478
-[v main@samples samples `uc  1 a 1 89 ]
-"477
-[v main@rd rd `uc  1 a 1 88 ]
-[v main@wr wr `uc  1 a 1 87 ]
-"384
-[v main@part_id part_id `uc  1 a 1 94 ]
-"530
+"511
+[v main@ir ir `ul  1 a 4 92 ]
+[v main@red red `ul  1 a 4 85 ]
+"486
+[v main@samples samples `uc  1 a 1 91 ]
+"485
+[v main@rd rd `uc  1 a 1 90 ]
+[v main@wr wr `uc  1 a 1 89 ]
+"392
+[v main@part_id part_id `uc  1 a 1 96 ]
+"540
 } 0
 "5 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
 {
 "8
-[v printf@ap ap `[1]*.30v  1 a 1 77 ]
+[v printf@ap ap `[1]*.30v  1 a 1 79 ]
 "5
 [v printf@fmt fmt `*.31Cuc  1 p 1 72 ]
 "13
@@ -548,9 +599,9 @@
 {
 "1820
 [v vfprintf@cfmt cfmt `*.31uc  1 a 1 71 ]
-[s S1547 _IO_FILE 0 ]
+[s S1636 _IO_FILE 0 ]
 "1817
-[v vfprintf@fp fp `*.39S1547  1 p 2 67 ]
+[v vfprintf@fp fp `*.39S1636  1 p 2 67 ]
 [v vfprintf@fmt fmt `*.31Cuc  1 p 1 69 ]
 [v vfprintf@ap ap `*.30*.30v  1 p 1 70 ]
 "1840
@@ -558,17 +609,17 @@
 "1177
 [v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
 {
-[u S1566 . 4 `l 1 sint 4 0 `ul 1 uint 4 0 `d 1 f 4 0 ]
+[u S1660 . 4 `l 1 sint 4 0 `ul 1 uint 4 0 `d 1 f 4 0 ]
 "1188
-[v vfpfcnvrt@convarg convarg `S1566  1 a 4 61 ]
+[v vfpfcnvrt@convarg convarg `S1660  1 a 4 61 ]
 "1179
 [v vfpfcnvrt@cp cp `*.31uc  1 a 1 66 ]
 [v vfpfcnvrt@c c `uc  1 a 1 65 ]
 "1180
 [v vfpfcnvrt@done done `a  1 a 1 60 ]
-[s S1547 _IO_FILE 0 ]
+[s S1636 _IO_FILE 0 ]
 "1177
-[v vfpfcnvrt@fp fp `*.39S1547  1 p 2 54 ]
+[v vfpfcnvrt@fp fp `*.39S1636  1 p 2 54 ]
 [v vfpfcnvrt@fmt fmt `*.30*.31uc  1 p 1 56 ]
 [v vfpfcnvrt@ap ap `*.30*.30v  1 p 1 57 ]
 "1814
@@ -583,9 +634,9 @@
 [v xtoa@c c `uc  1 a 1 51 ]
 "1067
 [v xtoa@p p `a  1 a 1 48 ]
-[s S1547 _IO_FILE 0 ]
+[s S1636 _IO_FILE 0 ]
 "1055
-[v xtoa@fp fp `*.39S1547  1 p 2 38 ]
+[v xtoa@fp fp `*.39S1636  1 p 2 38 ]
 [v xtoa@d d `ul  1 p 4 40 ]
 "1153
 } 0
@@ -597,54 +648,11 @@
 [v utoa@w w `i  1 a 2 45 ]
 "1007
 [v utoa@p p `a  1 a 1 44 ]
-[s S1547 _IO_FILE 0 ]
+[s S1636 _IO_FILE 0 ]
 "1001
-[v utoa@fp fp `*.39S1547  1 p 2 38 ]
+[v utoa@fp fp `*.39S1636  1 p 2 38 ]
 [v utoa@d d `ul  1 p 4 40 ]
 "1047
-} 0
-"193
-[v _pad pad `(v  1 s 1 pad ]
-{
-"195
-[v pad@i i `i  1 a 2 36 ]
-[s S1547 _IO_FILE 0 ]
-"193
-[v pad@fp fp `*.39S1547  1 p 2 30 ]
-[v pad@buf buf `*.30uc  1 p 1 32 ]
-[v pad@p p `i  1 p 2 33 ]
-"226
-} 0
-"8 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\nf_fputs.c
-[v _fputs fputs `(i  1 e 2 0 ]
-{
-"11
-[v fputs@i i `i  1 a 2 28 ]
-"10
-[v fputs@c c `uc  1 a 1 27 ]
-"8
-[v fputs@s s `*.30Cuc  1 p 1 24 ]
-[u S1525 . 2 `*.39uc 1 buffer 2 0 `*.39Cuc 1 source 2 0 ]
-[s S1528 _IO_FILE 11 `S1525 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v fputs@fp fp `*.39S1528  1 p 2 25 ]
-"19
-} 0
-"8 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\nf_fputc.c
-[v _fputc fputc `(i  1 e 2 0 ]
-{
-[v fputc@c c `i  1 p 2 15 ]
-[u S1525 . 2 `*.39uc 1 buffer 2 0 `*.39Cuc 1 source 2 0 ]
-[s S1528 _IO_FILE 11 `S1525 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
-[v fputc@fp fp `*.39S1528  1 p 2 17 ]
-"24
-} 0
-"196 C:\Users\bryan\MPLABXProjects\FinalProject.X\main.c
-[v _putch putch `(v  1 e 1 0 ]
-{
-[v putch@data data `uc  1 p 1 wreg ]
-[v putch@data data `uc  1 p 1 wreg ]
-[v putch@data data `uc  1 p 1 14 ]
-"206
 } 0
 "7 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\llmod.c
 [v ___llmod __llmod `(ul  1 e 4 0 ]
@@ -680,87 +688,186 @@
 [v read_prec_or_width@ap ap `*.30[1]*.30v  1 p 1 15 ]
 "1171
 } 0
-"258 C:\Users\bryan\MPLABXProjects\FinalProject.X\main.c
+"513
+[v _dtoa dtoa `(v  1 s 1 dtoa ]
+{
+"516
+[v dtoa@i i `i  1 a 2 50 ]
+[v dtoa@w w `i  1 a 2 47 ]
+"515
+[v dtoa@s s `uc  1 a 1 49 ]
+"520
+[v dtoa@p p `a  1 a 1 46 ]
+[s S1636 _IO_FILE 0 ]
+"513
+[v dtoa@fp fp `*.39S1636  1 p 2 38 ]
+[v dtoa@d d `l  1 p 4 40 ]
+"583
+} 0
+"193
+[v _pad pad `(v  1 s 1 pad ]
+{
+"195
+[v pad@i i `i  1 a 2 36 ]
+[s S1636 _IO_FILE 0 ]
+"193
+[v pad@fp fp `*.39S1636  1 p 2 30 ]
+[v pad@buf buf `*.30uc  1 p 1 32 ]
+[v pad@p p `i  1 p 2 33 ]
+"226
+} 0
+"8 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\nf_fputs.c
+[v _fputs fputs `(i  1 e 2 0 ]
+{
+"11
+[v fputs@i i `i  1 a 2 28 ]
+"10
+[v fputs@c c `uc  1 a 1 27 ]
+"8
+[v fputs@s s `*.30Cuc  1 p 1 24 ]
+[u S1614 . 2 `*.39uc 1 buffer 2 0 `*.39Cuc 1 source 2 0 ]
+[s S1617 _IO_FILE 11 `S1614 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputs@fp fp `*.39S1617  1 p 2 25 ]
+"19
+} 0
+"8 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+{
+[v fputc@c c `i  1 p 2 15 ]
+[u S1614 . 2 `*.39uc 1 buffer 2 0 `*.39Cuc 1 source 2 0 ]
+[s S1617 _IO_FILE 11 `S1614 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputc@fp fp `*.39S1617  1 p 2 17 ]
+"24
+} 0
+"197 C:\Users\bryan\MPLABXProjects\FinalProject.X\addadc.c
+[v _putch putch `(v  1 e 1 0 ]
+{
+[v putch@data data `uc  1 p 1 wreg ]
+[v putch@data data `uc  1 p 1 wreg ]
+[v putch@data data `uc  1 p 1 14 ]
+"207
+} 0
+"1 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\abs.c
+[v _abs abs `(i  1 e 2 0 ]
+{
+[v abs@a a `i  1 p 2 24 ]
+"4
+} 0
+"7 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\almod.c
+[v ___almod __almod `(l  1 e 4 0 ]
+{
+"10
+[v ___almod@sign sign `uc  1 a 1 23 ]
+[v ___almod@counter counter `uc  1 a 1 22 ]
+"7
+[v ___almod@dividend dividend `l  1 p 4 14 ]
+[v ___almod@divisor divisor `l  1 p 4 18 ]
+"34
+} 0
+"7 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+{
+"10
+[v ___aldiv@quotient quotient `l  1 a 4 24 ]
+"11
+[v ___aldiv@sign sign `uc  1 a 1 23 ]
+[v ___aldiv@counter counter `uc  1 a 1 22 ]
+"7
+[v ___aldiv@dividend dividend `l  1 p 4 14 ]
+[v ___aldiv@divisor divisor `l  1 p 4 18 ]
+"41
+} 0
+"259 C:\Users\bryan\MPLABXProjects\FinalProject.X\addadc.c
 [v _i2c_write i2c_write `(v  1 e 1 0 ]
 {
 [v i2c_write@i2c_data i2c_data `uc  1 p 1 wreg ]
 [v i2c_write@i2c_data i2c_data `uc  1 p 1 wreg ]
 [v i2c_write@i2c_data i2c_data `uc  1 p 1 15 ]
-"263
+"264
 } 0
-"253
+"254
 [v _i2c_stop i2c_stop `(v  1 e 1 0 ]
 {
-"256
+"257
 } 0
-"243
+"244
 [v _i2c_start i2c_start `(v  1 e 1 0 ]
 {
-"246
+"247
 } 0
-"248
+"249
 [v _i2c_rep_start i2c_rep_start `(v  1 e 1 0 ]
 {
-"251
+"252
 } 0
-"265
+"266
 [v _i2c_read i2c_read `(uc  1 e 1 0 ]
 {
 [v i2c_read@ack ack `uc  1 p 1 wreg ]
-"266
+"267
 [v i2c_read@recieve recieve `uc  1 a 1 16 ]
-"265
+"266
 [v i2c_read@ack ack `uc  1 p 1 wreg ]
 [v i2c_read@ack ack `uc  1 p 1 15 ]
-"273
+"274
 } 0
-"238
+"239
 [v _i2c_is_idle i2c_is_idle `(v  1 e 1 0 ]
 {
-"241
+"242
 } 0
-"175
+"176
 [v _Initialize Initialize `(v  1 e 1 0 ]
 {
-"190
+"191
 } 0
-"121
+"122
 [v _UART_Initialize UART_Initialize `(v  1 e 1 0 ]
 {
-"163
+"164
 } 0
-"165
+"166
 [v _I2C_Initialize I2C_Initialize `(v  1 e 1 0 ]
 {
-"173
+"174
 } 0
-"309
+"114
+[v _Button_Initialize Button_Initialize `(v  1 e 1 0 ]
+{
+"119
+} 0
+"98
+[v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
+{
+"111
+} 0
+"314
 [v _Lo_ISR Lo_ISR `IIL(v  1 e 1 0 ]
 {
-"311
+"316
 [v Lo_ISR@value value `i  1 a 2 12 ]
-"319
+"324
 } 0
-"332
+"338
 [v _variable_register_changed variable_register_changed `(v  1 e 1 0 ]
 {
 [v variable_register_changed@value value `i  1 p 2 5 ]
-"341
+"349
 } 0
-"287
+"288
 [v _H_ISR H_ISR `IIH(v  1 e 1 0 ]
 {
-"307
+"312
 } 0
-"323
+"328
 [v _button_pressed button_pressed `(v  1 e 1 0 ]
 {
-"330
+"336
 } 0
-"214
+"215
 [v _MyusartRead MyusartRead `(v  1 e 1 0 ]
 {
-"215
+"216
 [v MyusartRead@data data `uc  1 a 1 1 ]
-"219
+"220
 } 0
