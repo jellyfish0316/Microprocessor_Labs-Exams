@@ -437,7 +437,7 @@ uint8_t i2c_read(uint8_t ack){
         i2c_start();
         i2c_write(MAX30102_WRITE);
         i2c_write(0x08);
-        i2c_write(0b00010000); // notrollover
+        i2c_write(0b00010000); // rollover
         i2c_stop();
 
         // SpO2 Config

@@ -1,4 +1,4 @@
-# 1 "addadc.c"
+# 1 "main.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 285 "<built-in>" 3
@@ -6,88 +6,255 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "addadc.c" 2
-
-#pragma config OSC = INTIO67
-#pragma config FCMEN = OFF
-#pragma config IESO = ON
+# 1 "main.c" 2
+# 1 "./config.h" 1
 
 
-#pragma config PWRT = OFF
-#pragma config BOREN = SBORDIS
-#pragma config BORV = 3
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 1 3
+# 18 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 3
+extern const char __xc8_OPTIM_SPEED;
+
+extern double __fpnormalize(double);
 
 
-#pragma config WDT = OFF
-#pragma config WDTPS = 1
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/xc8debug.h" 1 3
 
 
-#pragma config CCP2MX = PORTC
-#pragma config PBADEN = ON
-#pragma config LPT1OSC = OFF
-#pragma config MCLRE = ON
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 1 3
 
 
-#pragma config STVREN = ON
-#pragma config LVP = OFF
-#pragma config XINST = OFF
 
-
-#pragma config CP0 = OFF
-#pragma config CP1 = OFF
-#pragma config CP2 = OFF
-#pragma config CP3 = OFF
-
-
-#pragma config CPB = OFF
-#pragma config CPD = OFF
-
-
-#pragma config WRT0 = OFF
-#pragma config WRT1 = OFF
-#pragma config WRT2 = OFF
-#pragma config WRT3 = OFF
-
-
-#pragma config WRTC = OFF
-#pragma config WRTB = OFF
-#pragma config WRTD = OFF
-
-
-#pragma config EBTR0 = OFF
-#pragma config EBTR1 = OFF
-#pragma config EBTR2 = OFF
-#pragma config EBTR3 = OFF
-
-
-#pragma config EBTRB = OFF
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/ctype.h" 1 3
-
-
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/musl_xc8.h" 1 3
+# 5 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 2 3
 
 
 
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/features.h" 1 3
-# 9 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/ctype.h" 2 3
+# 11 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 2 3
+# 21 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 1 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef long int wchar_t;
+# 128 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef unsigned size_t;
+# 174 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef __int24 int24_t;
+# 210 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef __uint24 uint24_t;
+# 22 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 2 3
 
-int isalnum(int);
-int isalpha(int);
-int isblank(int);
-int iscntrl(int);
-int isdigit(int);
-int isgraph(int);
-int islower(int);
-int isprint(int);
-int ispunct(int);
-int isspace(int);
-int isupper(int);
-int isxdigit(int);
-int tolower(int);
-int toupper(int);
-# 57 "addadc.c" 2
+int atoi (const char *);
+long atol (const char *);
+
+long long atoll (const char *);
+
+double atof (const char *);
+
+
+float strtof (const char *restrict, char **restrict);
+double strtod (const char *restrict, char **restrict);
+long double strtold (const char *restrict, char **restrict);
+
+
+
+long strtol (const char *restrict, char **restrict, int);
+unsigned long strtoul (const char *restrict, char **restrict, int);
+
+long long strtoll (const char *restrict, char **restrict, int);
+unsigned long long strtoull (const char *restrict, char **restrict, int);
+
+
+unsigned long __strtoxl(const char * s, char ** endptr, int base, char is_signed);
+
+unsigned long long __strtoxll(const char * s, char ** endptr, int base, char is_signed);
+# 55 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 3
+int rand (void);
+void srand (unsigned);
+
+void *malloc (size_t);
+void *calloc (size_t, size_t);
+void *realloc (void *, size_t);
+void free (void *);
+
+          void abort (void);
+int atexit (void (*) (void));
+          void exit (int);
+          void _Exit (int);
+
+void *bsearch (const void *, const void *, size_t, size_t, int (*)(const void *, const void *));
+
+
+
+
+
+
+
+__attribute__((nonreentrant)) void qsort (void *, size_t, size_t, int (*)(const void *, const void *));
+
+int abs (int);
+long labs (long);
+
+long long llabs (long long);
+
+
+typedef struct { int quot, rem; } div_t;
+typedef struct { long quot, rem; } ldiv_t;
+
+typedef struct { long long quot, rem; } lldiv_t;
+
+
+div_t div (int, int);
+ldiv_t ldiv (long, long);
+
+lldiv_t lldiv (long long, long long);
+
+
+typedef struct { unsigned int quot, rem; } udiv_t;
+typedef struct { unsigned long quot, rem; } uldiv_t;
+udiv_t udiv (unsigned int, unsigned int);
+uldiv_t uldiv (unsigned long, unsigned long);
+# 5 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/xc8debug.h" 2 3
+
+
+
+
+
+
+
+#pragma intrinsic(__builtin_software_breakpoint)
+extern void __builtin_software_breakpoint(void);
+# 24 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 2 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/builtins.h" 1 3
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 1 3
+# 26 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 1 3
+# 133 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef unsigned __int24 uintptr_t;
+# 148 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef __int24 intptr_t;
+# 164 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef signed char int8_t;
+
+
+
+
+typedef short int16_t;
+# 179 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef long int32_t;
+
+
+
+
+
+typedef long long int64_t;
+# 194 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef long long intmax_t;
+
+
+
+
+
+typedef unsigned char uint8_t;
+
+
+
+
+typedef unsigned short uint16_t;
+# 215 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef unsigned long uint32_t;
+
+
+
+
+
+typedef unsigned long long uint64_t;
+# 235 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
+typedef unsigned long long uintmax_t;
+# 27 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 2 3
+
+typedef int8_t int_fast8_t;
+
+typedef int64_t int_fast64_t;
+
+
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
+
+typedef int24_t int_least24_t;
+typedef int24_t int_fast24_t;
+
+typedef int32_t int_least32_t;
+
+typedef int64_t int_least64_t;
+
+
+typedef uint8_t uint_fast8_t;
+
+typedef uint64_t uint_fast64_t;
+
+
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
+
+typedef uint24_t uint_least24_t;
+typedef uint24_t uint_fast24_t;
+
+typedef uint32_t uint_least32_t;
+
+typedef uint64_t uint_least64_t;
+# 148 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/stdint.h" 1 3
+typedef int16_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint16_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+# 149 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 2 3
+# 5 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/builtins.h" 2 3
+
+
+#pragma intrinsic(__nop)
+extern void __nop(void);
+
+#pragma intrinsic(__nopf000)
+extern void __nopf000(void);
+#pragma intrinsic(__nopffff)
+extern void __nopffff(void);
+#pragma intrinsic(__nop0000)
+extern void __nop0000(void);
+
+
+
+#pragma intrinsic(_delay)
+extern __attribute__((nonreentrant)) void _delay(uint32_t);
+#pragma intrinsic(_delaywdt)
+extern __attribute__((nonreentrant)) void _delaywdt(uint32_t);
+
+#pragma intrinsic(_delay3)
+extern __attribute__((nonreentrant)) void _delay3(uint8_t);
+# 25 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 2 3
+
+
+
+
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/pic18.h" 1 3
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 1 3
+# 5 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/pic18.h" 2 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/pic18_chip_select.h" 1 3
+# 769 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/pic18_chip_select.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\proc/pic18f4520.h" 1 3
 # 50 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\proc/pic18f4520.h" 3
 extern volatile unsigned char PORTA __attribute__((address(0xF80)));
@@ -4602,15 +4769,35 @@ extern volatile __bit nWR __attribute__((address(0x7C21)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x7E3A)));
-# 58 "addadc.c" 2
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdbool.h" 1 3
-# 59 "addadc.c" 2
+# 770 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/pic18_chip_select.h" 2 3
+# 6 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/pic18.h" 2 3
+# 15 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/pic18.h" 3
+__attribute__((__unsupported__("The " "flash_write" " routine is no longer supported. Please use the MPLAB X MCC."))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
+__attribute__((__unsupported__("The " "EraseFlash" " routine is no longer supported. Please use the MPLAB X MCC."))) void EraseFlash(unsigned long startaddr, unsigned long endaddr);
+
+
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/errata.h" 1 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/pic18.h" 2 3
+# 139 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/pic18.h" 3
+__attribute__((__unsupported__("The " "Read_b_eep" " routine is no longer supported. Please use the MPLAB X MCC."))) unsigned char Read_b_eep(unsigned int badd);
+__attribute__((__unsupported__("The " "Busy_eep" " routine is no longer supported. Please use the MPLAB X MCC."))) void Busy_eep(void);
+__attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer supported. Please use the MPLAB X MCC."))) void Write_b_eep(unsigned int badd, unsigned char bdat);
+# 175 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/pic18.h" 3
+unsigned char __t1rd16on(void);
+unsigned char __t3rd16on(void);
+# 34 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 2 3
+# 5 "./config.h" 2
+# 2 "main.c" 2
+# 1 "./uart.h" 1
+
+
+
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdio.h" 1 3
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/musl_xc8.h" 1 3
-# 5 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdio.h" 2 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdio.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 1 3
 # 12 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
@@ -4620,14 +4807,8 @@ typedef void * va_list[1];
 
 
 typedef void * __isoc_va_list[1];
-# 128 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef unsigned size_t;
 # 143 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
 typedef __int24 ssize_t;
-# 174 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef __int24 int24_t;
-# 210 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef __uint24 uint24_t;
 # 255 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
 typedef long long off_t;
 # 409 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
@@ -4768,85 +4949,67 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 60 "addadc.c" 2
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 1 3
-# 21 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 1 3
-# 24 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef long int wchar_t;
-# 22 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 2 3
-
-int atoi (const char *);
-long atol (const char *);
-
-long long atoll (const char *);
-
-double atof (const char *);
-
-
-float strtof (const char *restrict, char **restrict);
-double strtod (const char *restrict, char **restrict);
-long double strtold (const char *restrict, char **restrict);
+# 6 "./uart.h" 2
+# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdbool.h" 1 3
+# 7 "./uart.h" 2
 
 
 
-long strtol (const char *restrict, char **restrict, int);
-unsigned long strtoul (const char *restrict, char **restrict, int);
 
-long long strtoll (const char *restrict, char **restrict, int);
-unsigned long long strtoull (const char *restrict, char **restrict, int);
+extern char uart_buffer[100];
+extern int uart_buffer_size;
+
+void uart_initialize(void);
+
+void uart_clear_buffer(void);
+void uart_read(void);
+int uart_get_string(char *str);
 
 
-unsigned long __strtoxl(const char * s, char ** endptr, int base, char is_signed);
-
-unsigned long long __strtoxll(const char * s, char ** endptr, int base, char is_signed);
-# 55 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdlib.h" 3
-int rand (void);
-void srand (unsigned);
-
-void *malloc (size_t);
-void *calloc (size_t, size_t);
-void *realloc (void *, size_t);
-void free (void *);
-
-          void abort (void);
-int atexit (void (*) (void));
-          void exit (int);
-          void _Exit (int);
-
-void *bsearch (const void *, const void *, size_t, size_t, int (*)(const void *, const void *));
+void putch(char data);
+# 3 "main.c" 2
+# 1 "./i2c.h" 1
 
 
 
 
 
 
-
-__attribute__((nonreentrant)) void qsort (void *, size_t, size_t, int (*)(const void *, const void *));
-
-int abs (int);
-long labs (long);
-
-long long llabs (long long);
-
-
-typedef struct { int quot, rem; } div_t;
-typedef struct { long quot, rem; } ldiv_t;
-
-typedef struct { long long quot, rem; } lldiv_t;
+void i2c_initialize(void);
+void i2c_is_idle(void);
+void i2c_start(void);
+void i2c_rep_start(void);
+void i2c_stop(void);
+void i2c_write(uint8_t data);
+uint8_t i2c_read(uint8_t ack);
+# 4 "main.c" 2
+# 1 "./adc.h" 1
 
 
-div_t div (int, int);
-ldiv_t ldiv (long, long);
-
-lldiv_t lldiv (long long, long long);
 
 
-typedef struct { unsigned int quot, rem; } udiv_t;
-typedef struct { unsigned long quot, rem; } uldiv_t;
-udiv_t udiv (unsigned int, unsigned int);
-uldiv_t uldiv (unsigned long, unsigned long);
-# 61 "addadc.c" 2
+
+void adc_initialize(void);
+void adc_start_conversion(void);
+# 5 "main.c" 2
+# 1 "./button.h" 1
+
+
+
+
+
+void button_initialize(void);
+# 6 "main.c" 2
+# 1 "./max30102.h" 1
+# 26 "./max30102.h"
+_Bool max30102_initialize(void);
+void max30102_write_reg(uint8_t reg, uint8_t value);
+uint8_t max30102_read_reg(uint8_t reg);
+void max30102_read_fifo(uint32_t *pun_red_led, uint32_t *pun_ir_led);
+uint8_t max30102_available(void);
+# 7 "main.c" 2
+
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/string.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 1 3
@@ -4904,580 +5067,119 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 62 "addadc.c" 2
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 1 3
-# 18 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 3
-extern const char __xc8_OPTIM_SPEED;
+# 10 "main.c" 2
 
-extern double __fpnormalize(double);
 
+volatile int alcohol = 0;
+volatile int mode = 0;
+volatile _Bool btn_interr = 0;
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/xc8debug.h" 1 3
-# 12 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/xc8debug.h" 3
-#pragma intrinsic(__builtin_software_breakpoint)
-extern void __builtin_software_breakpoint(void);
-# 24 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 2 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/builtins.h" 1 3
+void system_initialize(void);
+void button_pressed(void);
+void variable_register_changed(int value);
 
+void __attribute__((picinterrupt(("high_priority")))) H_ISR(void) {
 
+    if (INTCONbits.INT0IF) {
+        INTCONbits.INT0IE = 0;
+        _delay((unsigned long)((20)*(8000000/4000.0)));
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 1 3
-# 26 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 1 3
-# 133 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef unsigned __int24 uintptr_t;
-# 148 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef __int24 intptr_t;
-# 164 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef signed char int8_t;
+        if(PORTBbits.RB0 == 1){
+            button_pressed();
+        }
 
-
-
-
-typedef short int16_t;
-# 179 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef long int32_t;
-
-
-
-
-
-typedef long long int64_t;
-# 194 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef long long intmax_t;
-
-
-
-
-
-typedef unsigned char uint8_t;
-
-
-
-
-typedef unsigned short uint16_t;
-# 215 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef unsigned long uint32_t;
-
-
-
-
-
-typedef unsigned long long uint64_t;
-# 235 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/alltypes.h" 3
-typedef unsigned long long uintmax_t;
-# 27 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 2 3
-
-typedef int8_t int_fast8_t;
-
-typedef int64_t int_fast64_t;
-
-
-typedef int8_t int_least8_t;
-typedef int16_t int_least16_t;
-
-typedef int24_t int_least24_t;
-typedef int24_t int_fast24_t;
-
-typedef int32_t int_least32_t;
-
-typedef int64_t int_least64_t;
-
-
-typedef uint8_t uint_fast8_t;
-
-typedef uint64_t uint_fast64_t;
-
-
-typedef uint8_t uint_least8_t;
-typedef uint16_t uint_least16_t;
-
-typedef uint24_t uint_least24_t;
-typedef uint24_t uint_fast24_t;
-
-typedef uint32_t uint_least32_t;
-
-typedef uint64_t uint_least64_t;
-# 148 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/bits/stdint.h" 1 3
-typedef int16_t int_fast16_t;
-typedef int32_t int_fast32_t;
-typedef uint16_t uint_fast16_t;
-typedef uint32_t uint_fast32_t;
-# 149 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdint.h" 2 3
-# 5 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/builtins.h" 2 3
-
-
-#pragma intrinsic(__nop)
-extern void __nop(void);
-
-#pragma intrinsic(__nopf000)
-extern void __nopf000(void);
-#pragma intrinsic(__nopffff)
-extern void __nopffff(void);
-#pragma intrinsic(__nop0000)
-extern void __nop0000(void);
-
-
-
-#pragma intrinsic(_delay)
-extern __attribute__((nonreentrant)) void _delay(uint32_t);
-#pragma intrinsic(_delaywdt)
-extern __attribute__((nonreentrant)) void _delaywdt(uint32_t);
-
-#pragma intrinsic(_delay3)
-extern __attribute__((nonreentrant)) void _delay3(uint8_t);
-# 25 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 2 3
-
-
-
-
-
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/pic18.h" 1 3
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 1 3
-# 5 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/pic18.h" 2 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/pic18_chip_select.h" 1 3
-# 6 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/pic18.h" 2 3
-# 15 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/pic18.h" 3
-__attribute__((__unsupported__("The " "flash_write" " routine is no longer supported. Please use the MPLAB X MCC."))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
-__attribute__((__unsupported__("The " "EraseFlash" " routine is no longer supported. Please use the MPLAB X MCC."))) void EraseFlash(unsigned long startaddr, unsigned long endaddr);
-
-
-
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/errata.h" 1 3
-# 24 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/pic18.h" 2 3
-# 139 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/pic18.h" 3
-__attribute__((__unsupported__("The " "Read_b_eep" " routine is no longer supported. Please use the MPLAB X MCC."))) unsigned char Read_b_eep(unsigned int badd);
-__attribute__((__unsupported__("The " "Busy_eep" " routine is no longer supported. Please use the MPLAB X MCC."))) void Busy_eep(void);
-__attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer supported. Please use the MPLAB X MCC."))) void Write_b_eep(unsigned int badd, unsigned char bdat);
-# 175 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/pic18.h" 3
-unsigned char __t1rd16on(void);
-unsigned char __t3rd16on(void);
-# 34 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 2 3
-# 63 "addadc.c" 2
-# 72 "addadc.c"
-    char buffer[100];
-    int buffer_size = 0;
-    _Bool btn_interr = 0;
-
-    int alcohol = 0;
-
-    int mode = 0;
-
-
-
-    void putch(char data);
-    void ClearBuffer();
-    void MyusartRead();
-    int GetString(char *str);
-    void clear_terminal();
-
-
-    void variable_register_changed(int value);
-    void button_pressed();
-    void keyboard_input(char *str);
-
-
-    int delay(double sec);
-
-
-
-    void ADC_Initialize(void){
-
-        TRISAbits.RA0 = 1;
-        ADCON0bits.CHS = 0b0000;
-        ADCON1bits.VCFG0 = 0;
-        ADCON1bits.VCFG1 = 0;
-        ADCON2bits.ADCS = 0b101;
-        ADCON2bits.ACQT = 0b001;
-        ADCON0bits.ADON = 1;
-        ADCON2bits.ADFM = 1;
-        PIR1bits.ADIF = 0;
-        IPR1bits.ADIP = 0;
-        PIE1bits.ADIE = 1;
-    }
-
-
-    void Button_Initialize(void){
+        btn_interr = 1;
         INTCONbits.INT0IF = 0;
         INTCONbits.INT0IE = 1;
-
-        TRISB |= 0x01;
     }
 
-
-    void UART_Initialize(void){
-# 133 "addadc.c"
-        TRISCbits.TRISC6 = 1;
-        TRISCbits.TRISC7 = 1;
-
-
-
-        TXSTAbits.SYNC = 0;
-        BAUDCONbits.BRG16 = 0;
-        TXSTAbits.BRGH = 1;
-        SPBRG = 51;
-
-
-
-        RCSTAbits.SPEN = 1;
-        PIR1bits.TXIF = 0;
-        PIR1bits.RCIF = 0;
-        TXSTAbits.TXEN = 1;
-        RCSTAbits.CREN = 1;
-        PIE1bits.TXIE = 0;
-        IPR1bits.TXIP = 0;
-        PIE1bits.RCIE = 1;
-        IPR1bits.RCIP = 1;
-# 164 "addadc.c"
-    }
-
-    void I2C_Initialize(void) {
-        TRISCbits.RC3 = 1;
-        TRISCbits.RC4 = 1;
-        SSPSTATbits.SMP = 1;
-        SSPSTATbits.CKE = 1;
-        SSPCON1bits.SSPM = 8;
-        SSPADD = 19;
-        SSPCON1bits.SSPEN = 1;
-    }
-
-    void Initialize(void) {
-        OSCCONbits.IRCF = 0b111;
-        ADCON1bits.PCFG = 0b1110;
-
-        ADC_Initialize();
-        Button_Initialize();
-        UART_Initialize();
-        I2C_Initialize();
-
-
-        INTCONbits.PEIE = 1;
-        RCONbits.IPEN = 1;
-        INTCONbits.GIEH = 1;
-        INTCONbits.GIEL = 1;
-        INTCONbits.GIE = 1;
-    }
-
-
-
-
-
-    void putch(char data) {
-        if (data == '\n' || data == '\r') {
-            while (!TXSTAbits.TRMT);
-            TXREG = '\r';
-            while (!TXSTAbits.TRMT);
-            TXREG = '\n';
-        } else {
-            while (!TXSTAbits.TRMT);
-            TXREG = data;
+    if (RCIF) {
+        if (RCSTAbits.OERR) {
+            CREN = 0;
+            __nop();
+            CREN = 1;
         }
+
+        uart_read();
     }
+}
 
-    void ClearBuffer() {
-        for (int i = 0; i < 100; i++)
-            buffer[i] = '\0';
-        buffer_size = 0;
-    }
-
-    void MyusartRead() {
-        char data = RCREG;
-        if (!(((unsigned char)((data)-0x20)) < 0x5f) && data != '\r') return;
-        buffer[buffer_size++] = data;
-
-    }
-
-    int GetString(char *str) {
-        if (buffer[buffer_size - 1] == '\r') {
-            buffer[--buffer_size] = '\0';
-            strcpy(str, buffer);
-            ClearBuffer();
-            return 1;
-        } else {
-            str[0] = '\0';
-            return 0;
-        }
-    }
-
-    void clear_terminal() {
-        printf("\033[2J\033[H");
+void __attribute__((picinterrupt(("low_priority")))) Lo_ISR(void) {
+    if (PIR1bits.ADIF) {
+        int value = (ADRESH << 8) + ADRESL;
+        variable_register_changed(value);
+        PIR1bits.ADIF = 0;
+        _delay((unsigned long)((5)*(8000000/4000.0)));
     }
 
 
-void i2c_is_idle(void)
-{
-    while ((SSPCON2 & 0x1F) || (SSPSTATbits.R_W));
+    return;
 }
 
-void i2c_start(void){
-    i2c_is_idle();
-    SSPCON2bits.SEN = 1;
-}
+void system_initialize(void) {
+    OSCCONbits.IRCF = 0b111;
+    ADCON1bits.PCFG = 0b1110;
 
-void i2c_rep_start(void){
-    i2c_is_idle();
-    SSPCON2bits.RSEN = 1;
-}
+    adc_initialize();
+    button_initialize();
+    uart_initialize();
+    i2c_initialize();
 
-void i2c_stop(void){
-    i2c_is_idle();
-    SSPCON2bits.PEN = 1;
-}
 
-void i2c_write(uint8_t i2c_data){
-    i2c_is_idle();
-    SSPBUF = i2c_data;
-    while(SSPSTATbits.BF != 0);
-    while(SSPCON2bits.ACKSTAT != 0);
-}
-
-uint8_t i2c_read(uint8_t ack){
-    uint8_t recieve = 0;
-    i2c_is_idle();
-    SSPCON2bits.RCEN = 1;
-    while(SSPSTATbits.BF != 1);
-    recieve = SSPBUF;
-    SSPCON2bits.ACKEN = ack;
-    return recieve;
+    INTCONbits.PEIE = 1;
+    RCONbits.IPEN = 1;
+    INTCONbits.GIEH = 1;
+    INTCONbits.GIEL = 1;
+    INTCONbits.GIE = 1;
 }
 
 
 
-    int delay(double sec) {
-        btn_interr = 0;
-        int loops = (int)(sec * 1000 / 10);
-        for (int i = 0; i < loops; i++) {
-            if (btn_interr) return -1;
-            _delay((unsigned long)((10)*(8000000/4000.0)));
-        }
-        return 0;
+void button_pressed(void) {
+
+
+
+
+
+    mode = !mode;
+    alcohol = 0;
+}
+
+void variable_register_changed(int value) {
+# 96 "main.c"
+    alcohol = value;
+
+}
+
+void main() {
+    system_initialize();
+
+    printf("\033[2J\033[H");
+    printf("System initializing...\n");
+
+    _delay((unsigned long)((100)*(8000000/4000.0)));
+
+    if (max30102_initialize()) {
+        printf("MAX30102 Online!\r\n");
+    } else {
+        printf("MAX30102 Error!\r\n");
+        while(1);
     }
 
-    void __attribute__((picinterrupt(("high_priority")))) H_ISR(void) {
-
-        if (INTCONbits.INT0IF) {
-            INTCONbits.INT0IE = 0;
-            _delay((unsigned long)((20)*(8000000/4000.0)));
-
-            if(PORTBbits.RB0 == 1){
-                button_pressed();
-            }
-
-            btn_interr = 1;
-            INTCONbits.INT0IF = 0;
-            INTCONbits.INT0IE = 1;
-        }
-
-        if (RCIF) {
-            if (RCSTAbits.OERR) {
-                CREN = 0;
-                __nop();
-                CREN = 1;
-            }
-
-            MyusartRead();
-        }
-    }
-
-    void __attribute__((picinterrupt(("low_priority")))) Lo_ISR(void) {
-        if (PIR1bits.ADIF) {
-            int value = (ADRESH << 8) + ADRESL;
-            variable_register_changed(value);
-            PIR1bits.ADIF = 0;
-            _delay((unsigned long)((5)*(8000000/4000.0)));
-        }
-
-
-        return;
-    }
-
-
-
-    void button_pressed(void) {
-
-
-
-
-
-        mode = !mode;
-        alcohol = 0;
-    }
-
-    void variable_register_changed(int value) {
-# 347 "addadc.c"
-        alcohol = value;
-
-    }
-
-    void keyboard_input(char *str) {
-# 366 "addadc.c"
-    }
-
-    void main() {
-        Initialize();
-
-
-
-
-
-
-        uint8_t sample_data[6];
-        uint32_t red_val = 0;
-        uint32_t ir_val = 0;
-
-        char str[100];
-# 390 "addadc.c"
-        printf("Check Sensor ID...\n");
-
-        uint8_t part_id;
-
-
-        i2c_start();
-        printf("yeah\n");
-        i2c_write((0xAE));
-        printf("yeah\n");
-        i2c_write(0xFF);
-        printf("yeah\n");
-
-        i2c_rep_start();
-        printf("yeah\n");
-        i2c_write((0xAF));
-        printf("yeah\n");
-        part_id = i2c_read(0);
-        printf("yeah\n");
-        i2c_stop();
-
-        printf("Part ID: 0x%02X\n", part_id);
-
-        if(part_id == 0x15) {
-            printf("MAX30102 is ONLINE! \n");
-        } else {
-            printf("Wrong ID or Bus Error.\n");
-        }
-
-        _delay((unsigned long)((1000)*(8000000/4000.0)));
-
-
-        i2c_start();
-        i2c_write((0xAE));
-        i2c_write(0x09);
-        i2c_write(0x40);
-        i2c_stop();
-        _delay((unsigned long)((10)*(8000000/4000.0)));
-
-        i2c_start();
-        i2c_write((0xAE));
-        i2c_write(0x04);
-        i2c_write(0x00);
-        i2c_write(0x00);
-        i2c_write(0x00);
-        i2c_stop();
-
-
-        i2c_start();
-        i2c_write((0xAE));
-        i2c_write(0x08);
-        i2c_write(0b00010000);
-        i2c_stop();
-
-
-
-
-
-        i2c_start();
-        i2c_write((0xAE));
-        i2c_write(0x0A);
-        i2c_write(0b01000111);
-        i2c_stop();
-
-
-        i2c_start();
-        i2c_write((0xAE));
-        i2c_write(0x0C);
-        i2c_write(0x24);
-        i2c_stop();
-
-
-        i2c_start();
-        i2c_write((0xAE));
-        i2c_write(0x0D);
-        i2c_write(0x24);
-        i2c_stop();
-
-
-        i2c_start();
-        i2c_write((0xAE));
-        i2c_write(0x09);
-        i2c_write(0x03);
-        i2c_stop();
-
-
-
-        while (1) {
-# 485 "addadc.c"
-        uint8_t wr, rd;
-        uint8_t samples;
-
-
-        i2c_start();
-        i2c_write((0xAE));
-        i2c_write(0x04);
-        i2c_rep_start();
-        i2c_write((0xAF));
-        wr = i2c_read(0);
-        i2c_stop();
-
-
-        i2c_start();
-        i2c_write((0xAE));
-        i2c_write(0x06);
-        i2c_rep_start();
-        i2c_write((0xAF));
-        rd = i2c_read(0);
-        i2c_stop();
-
-        samples = (wr - rd) & 0x1F;
-
-
-        while(samples > 0)
-        {
-            uint32_t red, ir;
-
-            i2c_start();
-            i2c_write((0xAE));
-            i2c_write(0x07);
-            i2c_rep_start();
-            i2c_write((0xAF));
-
-            red = ((uint32_t)i2c_read(1)) << 16;
-            red |= ((uint32_t)i2c_read(1)) << 8;
-            red |= i2c_read(1);
-
-            ir = ((uint32_t)i2c_read(1)) << 16;
-            ir |= ((uint32_t)i2c_read(1)) << 8;
-            ir |= i2c_read(0);
-
-            i2c_stop();
-
-            red &= 0x3FFFF;
-            ir &= 0x3FFFF;
-
-            printf("%lu,%d\n", ir, alcohol);
-
+    uint32_t red_val = 0;
+    uint32_t ir_val = 0;
+
+    while (1) {
+
+        uint8_t samples = max30102_available();
+        while (samples > 0) {
+            max30102_read_fifo(&red_val, &ir_val);
+            printf("%lu,%d\n", ir_val, alcohol);
             samples--;
         }
-        if(mode == 1){
-            if (ADCON0bits.GO == 0) ADCON0bits.GO = 1;
+
+        if (mode == 1) {
+            adc_start_conversion();
         }
     }
 }
