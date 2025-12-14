@@ -5472,7 +5472,7 @@ uint8_t i2c_read(uint8_t ack){
             red &= 0x3FFFF;
             ir &= 0x3FFFF;
 
-            printf("%05lu%03d\n", ir, alcohol);
+            printf("%05lu,%03d\n", ir, alcohol);
 
             samples--;
         }

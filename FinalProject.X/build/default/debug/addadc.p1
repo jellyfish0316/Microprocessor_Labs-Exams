@@ -1973,7 +1973,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;addadc.c: 530:             ir &= 0x3FFFF;
 [e =& _ir -> -> 262143 `l `ul ]
 "532
-[; ;addadc.c: 532:             printf("%05lu%03d\n", ir, alcohol);
+[; ;addadc.c: 532:             printf("%05lu,%03d\n", ir, alcohol);
 [e ( _printf , , (. :s 12C _ir _alcohol ]
 "534
 [; ;addadc.c: 534:             samples--;
@@ -2017,7 +2017,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [a 6C 121 101 97 104 10 0 ]
 [a 7C 121 101 97 104 10 0 ]
 [a 8C 121 101 97 104 10 0 ]
-[a 12C 37 48 53 108 117 37 48 51 100 10 0 ]
+[a 12C 37 48 53 108 117 44 37 48 51 100 10 0 ]
 [a 9C 80 97 114 116 32 73 68 58 32 48 120 37 48 50 88 10 0 ]
 [a 11C 87 114 111 110 103 32 73 68 32 111 114 32 66 117 115 32 69 114 114 111 114 46 10 0 ]
 [a 2C 67 104 101 99 107 32 83 101 110 115 111 114 32 73 68 46 46 46 10 0 ]
