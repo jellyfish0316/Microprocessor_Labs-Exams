@@ -173,7 +173,7 @@
     }
 
     void Initialize(void) {
-        OSCCONbits.IRCF = 0b111;  // Osc = 4 MHz
+        OSCCONbits.IRCF = 0b111;  // Osc = 8 MHz
         ADCON1bits.PCFG = 0b1110;  // AN0 as analog input
 
         //ADC_Initialize();
@@ -429,7 +429,7 @@ uint8_t i2c_read(uint8_t ack){
         i2c_start();
         i2c_write(MAX30102_WRITE);
         i2c_write(0x08);
-        i2c_write(0b00010000); // rollover
+        i2c_write(0b00010000); // notrollover
         i2c_stop();
 
         // SpO2 Config
@@ -498,7 +498,7 @@ uint8_t i2c_read(uint8_t ack){
         samples = (wr - rd) & 0x1F;
 
         // 3️⃣ 有資料才讀
-        if(samples > 0)
+        while(samples > 0)
         {
             uint32_t red, ir;
 
@@ -521,13 +521,10 @@ uint8_t i2c_read(uint8_t ack){
             red &= 0x3FFFF;
             ir  &= 0x3FFFF;
 
-            printf("RED=%lu IR=%lu\n", red, ir);
+            printf("%lu\n", ir);
 
-
-        __delay_ms(10); // 👈 非常重要
-            
+            samples--; 
         }
-
+        
     }
 }
-    

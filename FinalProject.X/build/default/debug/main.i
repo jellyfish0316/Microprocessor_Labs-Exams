@@ -5441,7 +5441,7 @@ uint8_t i2c_read(uint8_t ack){
         samples = (wr - rd) & 0x1F;
 
 
-        if(samples > 0)
+        while(samples > 0)
         {
             uint32_t red, ir;
 
@@ -5464,11 +5464,9 @@ uint8_t i2c_read(uint8_t ack){
             red &= 0x3FFFF;
             ir &= 0x3FFFF;
 
-            printf("RED=%lu IR=%lu\n", red, ir);
+            printf("%lu\n", ir);
 
-
-        _delay((unsigned long)((10)*(8000000/4000.0)));
-
+            samples--;
         }
 
     }

@@ -1858,8 +1858,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 498:         samples = (wr - rd) & 0x1F;
 [e = _samples -> & - -> _wr `i -> _rd `i -> 31 `i `uc ]
 "501
-[; ;main.c: 501:         if(samples > 0)
-[e $ ! > -> _samples `i -> 0 `i 372  ]
+[; ;main.c: 501:         while(samples > 0)
+[e $U 372  ]
+[e :U 373 ]
 "502
 [; ;main.c: 502:         {
 {
@@ -1910,28 +1911,32 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 522:             ir &= 0x3FFFF;
 [e =& _ir -> -> 262143 `l `ul ]
 "524
-[; ;main.c: 524:             printf("RED=%lu IR=%lu\n", red, ir);
-[e ( _printf , , (. :s 12C _red _ir ]
+[; ;main.c: 524:             printf("%lu\n", ir);
+[e ( _printf , (. :s 12C _ir ]
+"526
+[; ;main.c: 526:             samples--;
+[e -- _samples -> -> 1 `i `uc ]
 "527
-[; ;main.c: 527:         _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"529
-[; ;main.c: 529:         }
+[; ;main.c: 527:         }
 }
 [e :U 372 ]
-"531
-[; ;main.c: 531:     }
+"501
+[; ;main.c: 501:         while(samples > 0)
+[e $ > -> _samples `i -> 0 `i 373  ]
+[e :U 374 ]
+"529
+[; ;main.c: 529:     }
 }
 [e :U 369 ]
 [e $U 370  ]
 [e :U 371 ]
-"532
-[; ;main.c: 532: }
+"530
+[; ;main.c: 530: }
 [e :UE 366 ]
 }
 [p f _printf 10519572 ]
 [a 1C 27 91 50 74 27 91 72 0 ]
-[a 12C 82 69 68 61 37 108 117 32 73 82 61 37 108 117 10 0 ]
+[a 12C 37 108 117 10 0 ]
 [a 3C 121 101 97 104 10 0 ]
 [a 4C 121 101 97 104 10 0 ]
 [a 5C 121 101 97 104 10 0 ]

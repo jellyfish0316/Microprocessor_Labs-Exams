@@ -523,22 +523,22 @@
 [v _main main `(v  1 e 1 0 ]
 {
 "503
-[v main@ir ir `ul  1 a 4 94 ]
-[v main@red red `ul  1 a 4 90 ]
+[v main@ir ir `ul  1 a 4 90 ]
+[v main@red red `ul  1 a 4 83 ]
 "478
 [v main@samples samples `uc  1 a 1 89 ]
 "477
 [v main@rd rd `uc  1 a 1 88 ]
 [v main@wr wr `uc  1 a 1 87 ]
 "384
-[v main@part_id part_id `uc  1 a 1 98 ]
-"532
+[v main@part_id part_id `uc  1 a 1 94 ]
+"530
 } 0
 "5 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
 {
 "8
-[v printf@ap ap `[1]*.30v  1 a 1 81 ]
+[v printf@ap ap `[1]*.30v  1 a 1 77 ]
 "5
 [v printf@fmt fmt `*.31Cuc  1 p 1 72 ]
 "13
