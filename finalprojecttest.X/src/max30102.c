@@ -28,7 +28,7 @@ bool max30102_initialize(void) {
     if (part_id != 0x15) {
         return false;
     }
-
+    /*
     // Reset
     max30102_write_reg(REG_MODE_CONFIG, 0x40);
     // Note: Should wait a bit here in main or use a delay
@@ -46,6 +46,31 @@ bool max30102_initialize(void) {
     // LED Pulse Amplitude
     max30102_write_reg(REG_LED1_PA, 0x24); // Red
     max30102_write_reg(REG_LED2_PA, 0x24); // IR
+
+    // Mode Config (SpO2 Mode)
+    max30102_write_reg(REG_MODE_CONFIG, 0x03);*/
+
+    //cheng setup
+    // Reset
+    max30102_write_reg(REG_MODE_CONFIG, 0x40);
+    // Note: Should wait a bit here in main or use a delay
+    __delay_ms(10);
+    // FIFO Config
+    
+    max30102_write_reg(REG_FIFO_WR_PTR, 0x00);
+    max30102_write_reg(REG_OVF_COUNTER, 0x00);
+    max30102_write_reg(REG_FIFO_RD_PTR, 0x00);
+
+    // SMP_AVE = 4 (010), FIFO_ROLLOVER_EN = 1 (1), FIFO_A_FULL = 0 (0000)
+    max30102_write_reg(REG_FIFO_CONFIG, 0x50); 
+
+    // SpO2 Config
+    // ADC Range = 4096nA (01), Sample Rate = 400Hz (011), Pulse Width = 411us (11)
+    max30102_write_reg(REG_SPO2_CONFIG, 0x2F); 
+
+    // LED Pulse Amplitude
+    max30102_write_reg(REG_LED1_PA, 0x0A); // Red dimmed
+    max30102_write_reg(REG_LED2_PA, 0x1F); // IR
 
     // Mode Config (SpO2 Mode)
     max30102_write_reg(REG_MODE_CONFIG, 0x03);

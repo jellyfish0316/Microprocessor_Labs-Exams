@@ -15,7 +15,7 @@ volatile bool btn_interr = false;
 
 void system_initialize(void);
 void button_pressed(void);
-void variable_register_changed(int value);
+void adc_changed(int value);
 
 void __interrupt(high_priority) H_ISR(void) {
 
@@ -46,7 +46,7 @@ void __interrupt(high_priority) H_ISR(void) {
 void __interrupt(low_priority) Lo_ISR(void) {
     if (PIR1bits.ADIF) {  // Handle variable register interrupt
         int value = (ADRESH << 8) + ADRESL;
-        variable_register_changed(value);
+        adc_changed(value);
         PIR1bits.ADIF = 0;
         __delay_ms(5);    // Larger then 2tad
     }
@@ -84,7 +84,7 @@ void button_pressed(void) {
     alcohol = 0;
 }
 
-void variable_register_changed(int value) {  // value: 0 ~ 1023
+void adc_changed(int value) {  // value: 0 ~ 1023
     // Do sth when the variable register changes
     /* Example:
     * set_servo_angle(VR_value_to_servo_angle(value));

@@ -20,12 +20,12 @@ void uart_initialize(void){
     TRISCbits.TRISC7 = 1;  // RC7(RX) : Receiver set 1   (input)
 
     // Setting Baud rate (when fosc = 8M)
-    // Baud rate = 9600 (Look up table)
+    // Baud rate = 115200 (Look up table)
     TXSTAbits.SYNC = 0;     // Synchronus or Asynchronus
-    BAUDCONbits.BRG16 = 0;  // 16 bits or 8 bits
+    BAUDCONbits.BRG16 = 1;  // 16 bits or 8 bits
     TXSTAbits.BRGH = 1;     // High Baud Rate Select bit
-    SPBRG = 51;             // Control the period
-    //SPBRGH = ;            // Used when BRG16 = 1 
+    SPBRG = 16;             // Control the period
+    SPBRGH = 0x00;            // Used when BRG16 = 1 
 
     // Serial enable
     RCSTAbits.SPEN = 1;  // Enable asynchronus serial port (must be set to 1)

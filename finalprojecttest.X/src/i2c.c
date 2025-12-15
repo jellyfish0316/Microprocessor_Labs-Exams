@@ -4,6 +4,8 @@
 
 void i2c_initialize(void) 
 {
+    /*
+    //100k
     TRISCbits.RC3 = 1;      // serial port: SCL
     TRISCbits.RC4 = 1;      // serial port: SDA
     SSPSTATbits.SMP = 1;    // standard speed: 100 kHz or 1MHz
@@ -11,6 +13,16 @@ void i2c_initialize(void)
     SSPCON1bits.SSPM = 8;   // master mode
     SSPADD = 19;            // @todo adjust Fosc and this speed: 100khz
     SSPCON1bits.SSPEN = 1;  // enable serial ports: SCL, SDA
+    */
+    //200k   
+    TRISCbits.RC3 = 1;      // serial port: SCL
+    TRISCbits.RC4 = 1;      // serial port: SDA
+    SSPSTATbits.SMP = 0;    // high speed 
+    SSPSTATbits.CKE = 1;    // disable SMBus
+    SSPCON1bits.SSPM = 8;   // master mode
+    SSPADD = 9;            // @todo adjust Fosc and this speed: 400khz
+    SSPCON1bits.SSPEN = 1;  // enable serial ports: SCL, SDA
+
 }
 
 void i2c_is_idle(void)
