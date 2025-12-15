@@ -20,7 +20,7 @@ void i2c_initialize(void)
     SSPSTATbits.SMP = 0;    // high speed 
     SSPSTATbits.CKE = 1;    // disable SMBus
     SSPCON1bits.SSPM = 8;   // master mode
-    SSPADD = 9;            // @todo adjust Fosc and this speed: 400khz
+    SSPADD = 4;            // @todo adjust Fosc and this speed: 400khz
     SSPCON1bits.SSPEN = 1;  // enable serial ports: SCL, SDA
 
 }
