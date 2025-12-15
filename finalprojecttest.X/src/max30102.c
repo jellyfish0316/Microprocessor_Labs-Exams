@@ -1,3 +1,4 @@
+#include "config.h"
 #include "max30102.h"
 #include "i2c.h"
 #include "uart.h" // For debugging prints if needed
